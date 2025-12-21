@@ -1,6 +1,6 @@
 /**
  * Experience Section
- * Timeline-style experience cards
+ * Professional timeline with modern cards
  */
 
 import React from 'react'
@@ -44,18 +44,20 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-neon-green/5 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
           title="Professional Experience"
-          subtitle="Journey and achievements"
+          subtitle="Career journey and achievements"
         />
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-green via-neon-teal to-transparent transform -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-accent via-neon-teal to-transparent transform -translate-x-1/2" />
 
           {/* Experience Items */}
           <div className="space-y-8 md:space-y-12">
@@ -70,23 +72,23 @@ const Experience = () => {
                 <div className="hidden md:flex items-center justify-center">
                   <div className="relative w-full">
                     <div className="flex justify-center">
-                      <div className="w-4 h-4 rounded-full bg-neon-green absolute z-10 left-1/2 transform -translate-x-1/2" />
+                      <div className="w-4 h-4 rounded-full bg-neon-accent absolute z-10 left-1/2 transform -translate-x-1/2 shadow-glow-md" />
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
-                <Card hoverable glowing={index % 2 === 0}>
+                <Card hoverable glowing={index % 2 === 0} className="group">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="text-4xl flex-shrink-0">{exp.icon}</div>
+                    <div className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform">{exp.icon}</div>
                     <div className="flex-grow">
-                      <h3 className="text-xl font-bold text-neon-green">{exp.role}</h3>
-                      <p className="text-neon-teal font-medium">{exp.company}</p>
-                      <p className="text-gray-500 text-sm">{exp.duration}</p>
+                      <h3 className="text-xl font-bold text-slate-100 group-hover:text-neon-accent transition-colors">{exp.role}</h3>
+                      <p className="text-neon-accent font-medium text-sm">{exp.company}</p>
+                      <p className="text-slate-500 text-sm">{exp.duration}</p>
                     </div>
                   </div>
 
-                  <p className="text-gray-400 mb-4 leading-relaxed">
+                  <p className="text-slate-400 mb-4 leading-relaxed">
                     {exp.description}
                   </p>
 
@@ -95,7 +97,7 @@ const Experience = () => {
                     {exp.highlights.map((highlight, idx) => (
                       <div
                         key={idx}
-                        className="px-3 py-1 bg-neon-green/10 border border-neon-green/30 rounded-full text-xs text-neon-green font-medium"
+                        className="px-3 py-1 bg-neon-accent/10 border border-neon-accent/30 rounded-full text-xs text-neon-accent font-medium hover:bg-neon-accent/20 transition-colors"
                       >
                         {highlight}
                       </div>

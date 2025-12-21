@@ -1,6 +1,6 @@
 /**
  * Projects Section
- * Grid layout with project cards
+ * Modern project grid with professional cards
  */
 
 import React, { useState } from 'react'
@@ -70,16 +70,19 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-20 left-20 w-72 h-72 bg-neon-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-neon-purple/5 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
           title="Featured Projects"
-          subtitle="Showcasing my best work"
+          subtitle="Showcasing my best work and innovations"
         />
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {projects.map((project) => (
             <Card
               key={project.id}
@@ -89,18 +92,18 @@ const Projects = () => {
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image Placeholder */}
-              <div className="w-full h-40 bg-gradient-to-br from-cyberpunk-card to-cyberpunk-darker rounded-lg mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-glow-md transition-shadow">
-                <div className="text-6xl opacity-50 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300">
+              <div className="w-full h-40 bg-gradient-to-br from-slate-800/30 via-slate-900/20 to-slate-900/40 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-glow-md transition-shadow duration-300">
+                <div className="text-6xl opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300">
                   {project.image}
                 </div>
               </div>
 
               {/* Project Info */}
               <div className="flex-grow">
-                <h3 className="text-lg font-bold text-neon-green mb-2 group-hover:text-neon-teal transition-colors">
+                <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-neon-accent transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                <p className="text-slate-400 text-sm mb-4 line-clamp-3 leading-relaxed">
                   {project.description}
                 </p>
               </div>
@@ -115,7 +118,7 @@ const Projects = () => {
               </div>
 
               {/* Buttons */}
-              <div className="flex gap-2 pt-4 border-t border-white/10">
+              <div className="flex gap-2 pt-4 border-t border-slate-700/30">
                 <Button
                   variant="ghost"
                   size="sm"
@@ -138,7 +141,7 @@ const Projects = () => {
         </div>
 
         {/* View All Projects Button */}
-        <div className="text-center mt-12">
+        <div className="text-center">
           <Button size="lg" variant="secondary">
             View All Projects
           </Button>

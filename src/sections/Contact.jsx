@@ -1,11 +1,12 @@
 /**
  * Contact Section
- * Contact form with validation
+ * Contact form with validation and modern design
  */
 
 import React, { useState } from 'react'
 import SectionHeader from '../components/SectionHeader'
 import Button from '../components/Button'
+import Card from '../components/Card'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -67,19 +68,21 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-neon-teal/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-accent/5 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
           title="Get In Touch"
           subtitle="Let's build something amazing together"
-          accent="center"
         />
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
           <div className="animate-slideIn">
-            <h3 className="text-2xl font-bold text-neon-green mb-8">
+            <h3 className="text-2xl font-bold text-slate-100 mb-8">
               Reach Out
             </h3>
 
@@ -91,18 +94,18 @@ const Contact = () => {
                   href={method.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 glass rounded-lg border border-white/10 hover:border-neon-green/50 hover:shadow-glow-sm transition-all group"
+                  className="flex items-center gap-4 p-4 glass rounded-lg border border-slate-700/50 hover:border-neon-accent/50 hover:shadow-glow-sm hover:bg-slate-800/40 transition-all group"
                 >
-                  <div className="text-3xl group-hover:scale-125 transition-transform">
+                  <div className="text-3xl group-hover:scale-125 transition-transform duration-300">
                     {method.icon}
                   </div>
                   <div className="flex-grow">
-                    <div className="text-gray-500 text-sm">{method.label}</div>
-                    <div className="text-neon-green font-medium hover:text-neon-teal transition-colors">
+                    <div className="text-slate-500 text-sm">{method.label}</div>
+                    <div className="text-neon-accent font-medium group-hover:text-neon-green transition-colors">
                       {method.value}
                     </div>
                   </div>
-                  <span className="text-neon-teal opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-neon-accent opacity-0 group-hover:opacity-100 transition-opacity">
                     →
                   </span>
                 </a>
@@ -110,11 +113,11 @@ const Contact = () => {
             </div>
 
             {/* Follow up message */}
-            <div className="glass rounded-lg p-6 border border-neon-teal/30 bg-neon-teal/5">
-              <p className="text-gray-300 text-sm leading-relaxed">
+            <Card className="bg-gradient-to-r from-neon-accent/5 to-neon-teal/5">
+              <p className="text-slate-400 text-sm leading-relaxed">
                 I'm always interested in hearing about new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!
               </p>
-            </div>
+            </Card>
           </div>
 
           {/* Contact Form */}
@@ -128,7 +131,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Name Input */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                   Your Name
                 </label>
                 <input
@@ -138,14 +141,14 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 glass rounded-lg border border-white/10 focus:border-neon-green focus:shadow-glow-sm text-white placeholder-gray-500 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent focus:shadow-glow-sm text-slate-100 placeholder-slate-500 focus:outline-none transition-all bg-slate-900/20 backdrop-blur-xl"
                   placeholder="John Doe"
                 />
               </div>
 
               {/* Email Input */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
                   Your Email
                 </label>
                 <input
@@ -155,14 +158,14 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 glass rounded-lg border border-white/10 focus:border-neon-green focus:shadow-glow-sm text-white placeholder-gray-500 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent focus:shadow-glow-sm text-slate-100 placeholder-slate-500 focus:outline-none transition-all bg-slate-900/20 backdrop-blur-xl"
                   placeholder="john@example.com"
                 />
               </div>
 
               {/* Message Input */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -172,7 +175,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 glass rounded-lg border border-white/10 focus:border-neon-green focus:shadow-glow-sm text-white placeholder-gray-500 focus:outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent focus:shadow-glow-sm text-slate-100 placeholder-slate-500 focus:outline-none transition-all resize-none bg-slate-900/20 backdrop-blur-xl"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -190,7 +193,7 @@ const Contact = () => {
             </form>
 
             {/* Privacy note */}
-            <p className="text-gray-500 text-xs mt-4 text-center">
+            <p className="text-slate-500 text-xs mt-4 text-center">
               I respect your privacy. Your information will never be shared.
             </p>
           </div>

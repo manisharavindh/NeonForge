@@ -12,10 +12,10 @@ html {
 }
 
 body {
-  @apply bg-cyberpunk-darker text-gray-100 font-sans overflow-x-hidden;
+  @apply bg-cyberpunk-darker text-slate-100 font-sans overflow-x-hidden;
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(74, 222, 128, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.03) 0%, transparent 50%);
 }
 
 /* Smooth scrollbar */
@@ -28,41 +28,32 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-neon-green rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-neon-teal;
+  @apply bg-neon-accent rounded-full hover:bg-neon-teal transition-colors;
 }
 
 /* Selection styles */
 ::selection {
-  @apply bg-neon-green text-cyberpunk-darker;
+  @apply bg-neon-accent text-cyberpunk-darker;
 }
 
 ::-moz-selection {
-  @apply bg-neon-green text-cyberpunk-darker;
+  @apply bg-neon-accent text-cyberpunk-darker;
 }
 
-/* Smooth focus states */
+/* Focus states */
 :focus-visible {
-  @apply outline-none ring-2 ring-neon-green ring-offset-2 ring-offset-cyberpunk-dark rounded-md;
-}
-
-/* Button reset */
-button {
-  @apply cursor-pointer transition-all duration-300;
+  @apply outline-none ring-2 ring-neon-accent ring-offset-2 ring-offset-cyberpunk-dark rounded-lg;
 }
 
 /* Link styles */
 a {
-  @apply text-neon-green hover:text-neon-teal transition-colors duration-300;
+  @apply text-neon-accent hover:text-neon-teal transition-colors duration-300;
 }
 
-/* Smooth animations */
-@keyframes slideIn {
+/* Refined animations */
+@keyframes slideInDown {
   from {
-    @apply opacity-0 -translate-y-4;
+    @apply opacity-0 -translate-y-8;
   }
   to {
     @apply opacity-100 translate-y-0;
@@ -79,37 +70,42 @@ a {
 }
 
 .animate-slideIn {
-  animation: slideIn 0.5s ease-out;
+  animation: slideInDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out;
 }
 
-/* Glassmorphism effect */
+/* Glassmorphism - refined */
 .glass {
-  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg;
+  @apply bg-slate-900/40 backdrop-blur-xl border border-slate-700/30 rounded-2xl;
 }
 
-.glass-glow {
-  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg shadow-neon-green;
+.glass-hover {
+  @apply glass hover:bg-slate-900/50 hover:border-slate-600/40 transition-all duration-300;
 }
 
 /* Text gradients */
 .text-glow {
-  @apply bg-gradient-to-r from-neon-green via-neon-teal to-neon-purple bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-neon-green via-neon-accent to-neon-teal bg-clip-text text-transparent;
+}
+
+.text-gradient-subtle {
+  @apply bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent;
 }
 
 /* Hover glow effect */
 .hover-glow {
-  @apply hover:shadow-neon-green hover:shadow-lg transition-all duration-300;
+  @apply hover:shadow-neon-teal hover:shadow-lg transition-all duration-300;
 }
 
-/* Neon border effect */
-.neon-border {
-  @apply border border-neon-green;
+/* Borders */
+.border-accent {
+  @apply border-neon-accent/30;
 }
 
-.neon-border-teal {
-  @apply border border-neon-teal;
+.border-accent-hover {
+  @apply border-neon-accent/30 hover:border-neon-accent/60 transition-colors duration-300;
 }
+

@@ -1,13 +1,22 @@
 /**
  * About Section
- * Professional bio with centered character image
+ * Professional bio with modern card layout
  */
 
 import React from 'react'
 import SectionHeader from '../components/SectionHeader'
 import Card from '../components/Card'
+import Badge from '../components/Badge'
 
 const About = () => {
+  const highlights = [
+    'Full-Stack Development',
+    'Machine Learning',
+    'Cloud Architecture',
+    'System Design',
+    'Team Leadership',
+  ]
+
   const infoCards = [
     {
       title: 'AI/ML Expertise',
@@ -32,43 +41,63 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-20 right-20 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
           title="About Me"
-          subtitle="Crafting solutions that matter"
-          accent="center"
+          subtitle="Passionate developer transforming ideas into innovative solutions"
         />
 
-        {/* Character Image */}
-        <div className="flex justify-center mb-12 animate-slideIn">
-          <div className="relative group">
-            {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-neon-green/30 to-neon-teal/30 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            {/* Character placeholder */}
-            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-neon-green overflow-hidden bg-cyberpunk-card flex items-center justify-center group-hover:border-neon-teal transition-colors">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          {/* Image */}
+          <div className="animate-slideIn">
+            <Card className="aspect-square flex items-center justify-center bg-gradient-to-br from-slate-800/30 via-transparent to-slate-900/30 group hover:bg-slate-800/50">
               <div className="text-center">
-                <div className="text-8xl mb-4">🧑‍💻</div>
-                <p className="text-gray-500 font-mono text-sm">Character</p>
+                <div className="text-9xl mb-4">👨‍💻</div>
+                <p className="text-slate-400 font-mono">Your Photo Here</p>
+              </div>
+            </Card>
+          </div>
+
+          {/* Content */}
+          <div className="animate-fadeIn">
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-slate-100 mb-6">Who I Am</h3>
+              <div className="space-y-4 text-slate-400 leading-relaxed">
+                <p>
+                  I'm a passionate AI/ML engineer and full-stack developer with expertise in building scalable applications and intelligent systems. My journey in tech has been marked by continuous learning and a drive to solve complex problems.
+                </p>
+                <p>
+                  With a strong foundation in computer science and real-world experience across startups and established tech companies, I bring both technical excellence and business acumen to every project.
+                </p>
+                <p>
+                  When I'm not coding, you'll find me exploring emerging technologies, contributing to open source, or sharing knowledge with the developer community.
+                </p>
               </div>
             </div>
 
-            {/* Floating circles */}
-            <div className="absolute top-0 right-0 w-16 h-16 border-2 border-neon-teal/50 rounded-full animate-spin" style={{ animationDuration: '8s' }} />
-            <div className="absolute bottom-0 left-0 w-12 h-12 border-2 border-neon-green/50 rounded-full animate-spin" style={{ animationDuration: '10s', animationDirection: 'reverse' }} />
-          </div>
-        </div>
+            {/* Highlights */}
+            <div>
+              <h3 className="text-lg font-bold text-slate-100 mb-4">What I Do Best</h3>
+              <div className="flex flex-wrap gap-3">
+                {highlights.map((highlight) => (
+                  <Badge key={highlight} variant="green">
+                    {highlight}
+                  </Badge>
+                ))}
+              </div>
+            </div>
 
-        {/* Bio Text */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-gray-300 text-lg leading-relaxed mb-4">
-            I'm a passionate AI/ML Engineer and Full-Stack Developer with a mission to create digital experiences that are both beautiful and functional. With 5+ years of experience, I've worked with startups and enterprises to transform complex challenges into elegant solutions.
-          </p>
-          <p className="text-gray-400 text-base leading-relaxed">
-            My expertise spans machine learning, web development, cloud architecture, and DevOps. I'm committed to writing clean, maintainable code and staying at the forefront of technology trends.
-          </p>
+            {/* Download CV Button */}
+            <div className="mt-10">
+              <button className="px-8 py-3 rounded-xl font-semibold transition-all duration-300 border border-neon-accent/30 text-neon-accent hover:bg-neon-accent/10 hover:border-neon-accent/60 hover:shadow-glow-sm">
+                Download My CV
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Info Cards */}
@@ -76,8 +105,8 @@ const About = () => {
           {infoCards.map((card, index) => (
             <Card key={index} hoverable glowing={index % 2 === 0}>
               <div className="text-4xl mb-4">{card.icon}</div>
-              <h3 className="text-lg font-bold text-neon-green mb-2">{card.title}</h3>
-              <p className="text-gray-400 text-sm">{card.description}</p>
+              <h3 className="text-lg font-bold text-neon-accent mb-2">{card.title}</h3>
+              <p className="text-slate-400 text-sm">{card.description}</p>
             </Card>
           ))}
         </div>
