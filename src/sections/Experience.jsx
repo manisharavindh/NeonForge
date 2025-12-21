@@ -46,7 +46,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-neon-green/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-10 w-72 h-72 bg-neon-accent/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader

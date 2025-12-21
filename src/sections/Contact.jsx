@@ -70,7 +70,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-neon-teal/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-neon-accent/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-accent/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -81,7 +81,7 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
-          <div className="animate-slideIn">
+          <div>
             <h3 className="text-2xl font-bold text-slate-100 mb-8">
               Reach Out
             </h3>
@@ -113,7 +113,7 @@ const Contact = () => {
             </div>
 
             {/* Follow up message */}
-            <Card className="bg-gradient-to-r from-neon-accent/5 to-neon-teal/5">
+            <Card className="bg-gradient-to-r from-neon-accent/5 to-neon-light/5">
               <p className="text-slate-400 text-sm leading-relaxed">
                 I'm always interested in hearing about new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!
               </p>
@@ -121,9 +121,9 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="animate-slideIn" style={{ animationDelay: '0.1s' }}>
+          <div>
             {submitted && (
-              <div className="mb-6 p-4 glass rounded-lg border border-neon-green/50 bg-neon-green/10 text-neon-green text-center font-medium animate-slideIn">
+              <div className="mb-6 p-4 glass rounded-lg border border-neon-accent/50 bg-neon-accent/10 text-neon-accent text-center font-medium">
                 ✓ Message sent successfully! I'll get back to you soon.
               </div>
             )}

@@ -50,7 +50,7 @@ const Achievements = () => {
   return (
     <section id="achievements" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-20 w-72 h-72 bg-neon-muted/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-accent/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -85,7 +85,7 @@ const Achievements = () => {
               </p>
 
               {/* Hover effect line */}
-              <div className="mt-4 h-1 bg-gradient-to-r from-neon-green to-neon-teal rounded-full w-0 group-hover:w-full transition-all duration-300" />
+              <div className="mt-4 h-1 bg-gradient-to-r from-neon-accent to-neon-light rounded-full w-0 group-hover:w-full transition-all duration-300" />
             </Card>
           ))}
         </div>

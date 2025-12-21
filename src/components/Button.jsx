@@ -23,8 +23,8 @@ const Button = ({
   const variantStyles = {
     primary: 'bg-gradient-to-r from-neon-green to-neon-accent text-slate-900 scale-100 hover:scale-105 font-bold',
     secondary: 'border-2 border-neon-accent text-neon-accent hover:bg-neon-accent/10',
-    outline: 'border-2 border-slate-600 text-slate-300 hover:border-neon-teal hover:bg-neon-teal/5 hover:text-neon-teal',
-    ghost: 'text-neon-accent hover:bg-neon-accent/10 hover:text-neon-teal',
+    outline: 'border-2 border-slate-600 text-slate-300 hover:border-neon-light hover:bg-neon-light/5 hover:text-neon-light',
+    ghost: 'text-neon-accent hover:bg-neon-accent/10 hover:text-neon-light',
   }
 
   return (

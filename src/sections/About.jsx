@@ -43,7 +43,7 @@ const About = () => {
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-20 w-72 h-72 bg-neon-muted/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
@@ -51,16 +51,9 @@ const About = () => {
           subtitle="Passionate developer transforming ideas into innovative solutions"
         />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          {/* Image */}
-          <div className="animate-slideIn">
-            <Card className="aspect-square flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=600&fit=crop")' }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-800/30 via-transparent to-slate-900/30" />
-            </Card>
-          </div>
-
+        <div className="mb-16">
           {/* Content */}
-          <div className="animate-fadeIn">
+          <div>
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-slate-100 mb-6">Who I Am</h3>
               <div className="space-y-4 text-slate-400 leading-relaxed">

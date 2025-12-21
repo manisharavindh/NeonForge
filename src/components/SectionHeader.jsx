@@ -9,7 +9,7 @@ const SectionHeader = ({ title, subtitle = '', accent = 'left' }) => {
   return (
     <div className={`flex items-center gap-5 mb-14 ${accent === 'center' ? 'justify-center text-center flex-col' : ''}`}>
       {accent === 'left' && (
-        <div className="h-14 w-1 bg-gradient-to-b from-neon-accent via-neon-teal to-transparent rounded-full" />
+        <div className="h-14 w-1 bg-gradient-to-b from-neon-accent via-neon-light to-transparent rounded-full" />
       )}
       <div>
         <h2 className="text-4xl md:text-5xl font-bold text-glow mb-3">

@@ -12,14 +12,10 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center pt-24 pb-10 relative overflow-hidden"
     >
-      {/* Animated background elements */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-neon-accent/5 rounded-full blur-3xl animate-float opacity-40" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-teal/5 rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: '1s' }} />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl">
           {/* Left content */}
-          <div className="animate-slideIn">
+          <div>
             <div className="inline-block mb-8">
               <div className="px-5 py-3 glass rounded-full border border-neon-accent/40 backdrop-blur-xl">
                 <span className="text-neon-accent text-sm font-semibold">Welcome to NeonForge</span>
@@ -60,23 +56,6 @@ const Hero = () => {
                 <div className="text-3xl md:text-4xl font-bold text-neon-purple mb-2">5+</div>
                 <div className="text-slate-400 text-sm">Years Experience</div>
               </div>
-            </div>
-          </div>
-
-          {/* Right - Illustration */}
-          <div className="animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-            <div className="relative">
-              {/* Glowing frame */}
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-accent/10 to-neon-teal/10 rounded-3xl blur-2xl" />
-
-              {/* Illustration placeholder */}
-              <div className="relative glass rounded-3xl border border-slate-700/50 p-8 aspect-square flex items-center justify-center overflow-hidden group bg-cover bg-center" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=600&fit=crop")' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-800/20 via-transparent to-slate-900/20 group-hover:from-slate-800/40 group-hover:to-slate-900/40 transition-all duration-500" />
-              </div>
-
-              {/* Floating elements */}
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-neon-accent/10 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-neon-teal/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
           </div>
         </div>

@@ -14,8 +14,8 @@ html {
 body {
   @apply bg-cyberpunk-darker text-slate-100 font-sans overflow-x-hidden;
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(74, 222, 128, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(110, 231, 183, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(196, 181, 253, 0.02) 0%, transparent 50%);
 }
 
 /* Smooth scrollbar */

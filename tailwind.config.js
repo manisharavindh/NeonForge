@@ -8,17 +8,19 @@ export default {
     extend: {
       colors: {
         neon: {
-          green: '#4ade80',      // Soft mint green
-          teal: '#22d3ee',       // Soft cyan
-          purple: '#a78bfa',     // Soft purple
-          pink: '#f472b6',       // Soft pink
-          accent: '#06b6d4',     // Primary accent
+          green: '#6ee7b7',      // Soft teal
+          teal: '#6ee7b7',       // Soft teal
+          purple: '#c4b5fd',     // Soft purple
+          pink: '#f9a8d4',       // Soft pink
+          accent: '#6ee7b7',     // Soft accent
+          light: '#a7f3d0',      // Light soft green
+          muted: '#c4b5fd',      // Soft purple
         },
         cyberpunk: {
-          dark: '#0f172a',       // Deep navy
-          darker: '#020617',     // Almost black
-          card: '#1e293b',       // Card gray
-          border: '#334155',     // Border color
+          dark: '#0f0d1a',       // Deep dark background
+          darker: '#0f0d1a',     // Deep dark background
+          card: '#1a1625',       // Soft card background
+          border: '#2d2641',     // Soft border color
         }
       },
       fontFamily: {

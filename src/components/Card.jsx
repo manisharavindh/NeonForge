@@ -11,10 +11,10 @@ const Card = ({ children, className = '', glowing = false, hoverable = true }) =
       className={`glass rounded-2xl p-7 transition-all duration-300 ${
         glowing 
           ? 'border-neon-accent/50' 
-          : 'border-slate-700/30'
+          : 'border-slate-600/30'
       } ${
         hoverable
-          ? 'hover:border-neon-accent/60 hover:scale-105 hover:bg-slate-900/60'
+          ? 'hover:border-neon-accent/60 hover:scale-105 hover:bg-slate-800/60'
           : ''
       } ${className}`}
     >

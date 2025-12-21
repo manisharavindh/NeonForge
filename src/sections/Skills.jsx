@@ -19,13 +19,13 @@ const Skills = () => {
     {
       name: 'Frameworks',
       skills: ['React', 'Node.js', 'Django', 'FastAPI', 'TensorFlow', 'PyTorch'],
-      color: 'teal',
+      color: 'green',
       icon: '🛠️',
     },
     {
       name: 'Tools & Platforms',
       skills: ['Git', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'GCP'],
-      color: 'purple',
+      color: 'green',
       icon: '🌐',
     },
     {
@@ -39,8 +39,8 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-neon-teal/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-purple/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-neon-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-muted/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
@@ -73,7 +73,7 @@ const Skills = () => {
         {/* Proficiency Section */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Technical Proficiency */}
-          <div className="animate-slideIn">
+          <div>
             <h3 className="text-2xl font-bold text-slate-100 mb-8">Technical Proficiency</h3>
             <div className="space-y-6">
               {[
@@ -99,7 +99,7 @@ const Skills = () => {
           </div>
 
           {/* Soft Skills */}
-          <div className="animate-fadeIn">
+          <div>
             <h3 className="text-2xl font-bold text-slate-100 mb-8">Soft Skills</h3>
             <div className="grid grid-cols-2 gap-4">
               {[
