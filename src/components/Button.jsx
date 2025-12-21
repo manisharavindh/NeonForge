@@ -21,10 +21,10 @@ const Button = ({
   }
 
   const variantStyles = {
-    primary: 'bg-neon-green text-cyberpunk-darker border-2 border-neon-green hover:bg-neon-green/90 hover:scale-105 font-bold shadow-lg',
-    secondary: 'border-2 border-neon-accent text-neon-accent hover:bg-neon-accent/10 hover:shadow-lg',
-    outline: 'border-2 border-neon-accent text-neon-accent hover:border-neon-green hover:bg-neon-green/5 hover:text-neon-green',
-    ghost: 'text-neon-accent hover:bg-neon-accent/10 hover:text-neon-green border border-neon-accent/30',
+    primary: 'bg-neon-accent text-cyberpunk-darker border-2 border-neon-accent hover:bg-neon-light hover:scale-105 font-bold shadow-lg',
+    secondary: 'border-2 border-neon-purple text-neon-accent hover:bg-neon-purple/10 hover:shadow-lg',
+    outline: 'border-2 border-neon-accent text-neon-accent hover:border-neon-light hover:bg-neon-light/10 hover:text-neon-light',
+    ghost: 'text-neon-accent hover:bg-neon-accent/10 hover:text-neon-light border border-neon-accent/30',
   }
 
   return (

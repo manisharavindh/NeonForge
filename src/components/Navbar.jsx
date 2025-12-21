@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react'
+import { useTerminalStore } from '../store/terminalStore'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -68,6 +69,15 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300" />
               </button>
             ))}
+            
+            {/* Terminal Button */}
+            <button
+              onClick={() => useTerminalStore.openTerminal()}
+              className="text-neon-accent hover:text-neon-green text-xs font-mono transition-colors duration-300 relative group border border-neon-accent/20 px-3 py-1 hover:border-neon-green/50"
+            >
+              &gt; terminal
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300" />
+            </button>
           </div>
 
           {/* Mobile Menu Button */}

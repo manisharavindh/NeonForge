@@ -6,6 +6,7 @@
 import React, { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import TerminalButton from './components/TerminalButton'
 import Hero from './sections/Hero'
 import About from './sections/About'
 import Skills from './sections/Skills'
@@ -77,11 +78,14 @@ function App() {
       {/* Footer */}
       <Footer />
 
+      {/* Terminal Button */}
+      <TerminalButton />
+
       {/* Background animation elements */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Animated background gradients */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl animate-float opacity-20" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-neon-teal/5 rounded-full blur-3xl animate-float opacity-20" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-neon-purple/5 rounded-full blur-3xl animate-float opacity-20" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-neon-light/5 rounded-full blur-3xl animate-float opacity-20" style={{ animationDelay: '1s' }} />
       </div>
     </div>
   )

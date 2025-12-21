@@ -13,7 +13,8 @@ html {
 
 body {
   @apply bg-cyberpunk-darker text-neon-accent font-mono overflow-x-hidden;
-  background-image: none;
+  background-image: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #2d1b4e 100%);
+  background-attachment: fixed;
 }
 
 /* Terminal cursor animation */
@@ -26,7 +27,7 @@ body {
   display: inline-block;
   width: 2px;
   height: 1em;
-  background-color: #00ff88;
+  background-color: #a78bfa;
   animation: blink 1s infinite;
   margin-left: 2px;
 }
@@ -74,14 +75,14 @@ body {
 /* Selection styles */
 ::selection {
   @apply bg-neon-accent text-cyberpunk-darker;
-  background-color: #00ff88;
-  color: #0a0a0a;
+  background-color: #a78bfa;
+  color: #0f0f1e;
 }
 
 ::-moz-selection {
   @apply bg-neon-accent text-cyberpunk-darker;
-  background-color: #00ff88;
-  color: #0a0a0a;
+  background-color: #a78bfa;
+  color: #0f0f1e;
 }
 
 /* Focus states */

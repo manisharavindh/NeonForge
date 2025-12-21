@@ -26,3 +26,33 @@ Thumbs.db
 # Environment
 .env
 .env.local
+.env.*.local
+
+# Build & Output
+build
+out
+*.tsbuildinfo
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Testing
+coverage
+.nyc_output
+*.lcov
+
+# IDE extensions
+*.code-workspace
+.history
+
+# System & Temporary
+*.tmp
+*.temp
+.cache
+*.bak
+
+# Node specific
+npm-error.log
+yarn-error.log

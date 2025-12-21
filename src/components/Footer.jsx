@@ -35,7 +35,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex flex-col items-start md:items-end gap-4">
-            <div className="text-neon-green text-sm">
+            <div className="text-sm">
               <span className="terminal-bracket">$</span> open --socials
             </div>
             <div className="flex gap-2">
@@ -74,12 +74,12 @@ const Footer = () => {
           </div>
           
           {/* Terminal cursor at end */}
-          <div className="mt-4 text-slate-600 text-xs font-mono">
+          {/* <div className="mt-4 text-slate-600 text-xs font-mono">
             <span className="terminal-prompt">➜</span>
             <span className="text-slate-600 ml-1">~</span>
             <span className="terminal-bracket"> $</span>
             <span className="terminal-cursor"></span>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
