@@ -12,8 +12,8 @@ html {
 }
 
 body {
-  @apply bg-cyberpunk-darker text-neon-accent font-mono overflow-x-hidden;
-  background-image: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #2d1b4e 100%);
+  @apply bg-cyberpunk-darker text-neon-light font-mono overflow-x-hidden;
+  background-image: linear-gradient(135deg, #050d05 0%, #0d1a0d 50%, #0a1a0a 100%);
   background-attachment: fixed;
 }
 
@@ -27,7 +27,7 @@ body {
   display: inline-block;
   width: 2px;
   height: 1em;
-  background-color: #a78bfa;
+  background-color: #34d399;
   animation: blink 1s infinite;
   margin-left: 2px;
 }
@@ -65,34 +65,34 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-neon-accent rounded-full transition-colors;
+  @apply bg-neon-green rounded-full transition-colors;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neon-green;
+  @apply bg-neon-light;
 }
 
 /* Selection styles */
 ::selection {
   @apply bg-neon-accent text-cyberpunk-darker;
-  background-color: #a78bfa;
-  color: #0f0f1e;
+  background-color: #34d399;
+  color: #050d05;
 }
 
 ::-moz-selection {
   @apply bg-neon-accent text-cyberpunk-darker;
-  background-color: #a78bfa;
-  color: #0f0f1e;
+  background-color: #34d399;
+  color: #050d05;
 }
 
 /* Focus states */
 :focus-visible {
-  @apply outline-none ring-2 ring-neon-accent ring-offset-2 ring-offset-cyberpunk-dark rounded-lg;
+  @apply outline-none ring-2 ring-neon-green ring-offset-2 ring-offset-cyberpunk-dark rounded-lg;
 }
 
 /* Link styles */
 a {
-  @apply text-neon-accent hover:text-neon-green transition-colors duration-300 underline;
+  @apply text-neon-pink hover:text-neon-accent transition-colors duration-300 underline;
 }
 
 /* Refined animations */
@@ -124,19 +124,19 @@ a {
 
 /* Terminal Window */
 .terminal-window {
-  @apply bg-cyberpunk-card border border-neon-accent/50 rounded-none;
+  @apply bg-cyberpunk-card border border-neon-green/50 rounded-none;
 }
 
 .terminal-header {
-  @apply bg-cyberpunk-dark border-b border-neon-accent/50 px-4 py-2 flex items-center gap-2;
+  @apply bg-cyberpunk-dark border-b border-neon-green/50 px-4 py-2 flex items-center gap-2;
 }
 
 .terminal-button {
-  @apply text-neon-green;
+  @apply text-neon-light;
 }
 
 .text-gradient-subtle {
-  @apply text-neon-accent;
+  @apply text-neon-light;
 }
 
 /* Terminal prompt */
@@ -145,19 +145,19 @@ a {
 }
 
 .terminal-command {
-  @apply text-neon-accent;
+  @apply text-neon-light;
 }
 
 .terminal-output {
-  @apply text-neon-accent/80;
+  @apply text-neon-light/80;
 }
 
 .terminal-path {
-  @apply text-neon-purple;
+  @apply text-neon-green;
 }
 
 .terminal-bracket {
-  @apply text-neon-accent;
+  @apply text-neon-light;
 }
 
 .terminal-button-yellow {
@@ -174,33 +174,33 @@ a {
 
 /* Glassmorphism - refined */
 .glass {
-  @apply bg-cyberpunk-card/50 backdrop-blur-xl border border-neon-accent/20 rounded-none;
+  @apply bg-cyberpunk-card/50 backdrop-blur-xl border border-neon-green/20 rounded-none;
 }
 
 .glass-hover {
-  @apply glass hover:bg-cyberpunk-card/70 hover:border-neon-accent/40 transition-all duration-300;
+  @apply glass hover:bg-cyberpunk-card/70 hover:border-neon-green/40 transition-all duration-300;
 }
 
 /* Text gradients */
 .text-glow {
-  @apply text-neon-green;
+  @apply text-neon-pink;
 }
 
 .text-gradient-subtle {
-  @apply text-neon-accent;
+  @apply text-neon-light;
 }
 
 /* Hover glow effect */
 .hover-glow {
-  @apply hover:border-neon-accent/60 transition-all duration-300;
+  @apply hover:border-neon-green/60 transition-all duration-300;
 }
 
 /* Borders */
 .border-accent {
-  @apply border-neon-accent/30;
+  @apply border-neon-green/30;
 }
 
 .border-accent-hover {
-  @apply border-neon-accent/30 hover:border-neon-accent/60 transition-colors duration-300;
+  @apply border-neon-green/30 hover:border-neon-green/60 transition-colors duration-300;
 }
 
