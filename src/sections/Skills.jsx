@@ -89,7 +89,7 @@ const Skills = () => {
                   </div>
                   <div className="w-full bg-slate-800/40 rounded-full h-3 overflow-hidden border border-slate-700/30 backdrop-blur-sm">
                     <div
-                      className="bg-gradient-to-r from-neon-green to-neon-accent h-full rounded-full transition-all duration-700 shadow-glow-sm"
+                      className="bg-gradient-to-r from-neon-green to-neon-accent h-full rounded-full transition-all duration-700"
                       style={{ width: `${item.level}%` }}
                     />
                   </div>

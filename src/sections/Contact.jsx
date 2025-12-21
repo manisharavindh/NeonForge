@@ -94,7 +94,7 @@ const Contact = () => {
                   href={method.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 glass rounded-lg border border-slate-700/50 hover:border-neon-accent/50 hover:shadow-glow-sm hover:bg-slate-800/40 transition-all group"
+                  className="flex items-center gap-4 p-4 glass rounded-lg border border-slate-700/50 hover:border-neon-accent/50 hover:bg-slate-800/40 transition-all group"
                 >
                   <div className="text-3xl group-hover:scale-125 transition-transform duration-300">
                     {method.icon}
@@ -141,7 +141,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent focus:shadow-glow-sm text-slate-100 placeholder-slate-500 focus:outline-none transition-all bg-slate-900/20 backdrop-blur-xl"
+                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent text-slate-100 placeholder-slate-500 focus:outline-none transition-all bg-slate-900/20 backdrop-blur-xl"
                   placeholder="John Doe"
                 />
               </div>
@@ -158,7 +158,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent focus:shadow-glow-sm text-slate-100 placeholder-slate-500 focus:outline-none transition-all bg-slate-900/20 backdrop-blur-xl"
+                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent text-slate-100 placeholder-slate-500 focus:outline-none transition-all bg-slate-900/20 backdrop-blur-xl"
                   placeholder="john@example.com"
                 />
               </div>
@@ -175,7 +175,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent focus:shadow-glow-sm text-slate-100 placeholder-slate-500 focus:outline-none transition-all resize-none bg-slate-900/20 backdrop-blur-xl"
+                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent text-slate-100 placeholder-slate-500 focus:outline-none transition-all resize-none bg-slate-900/20 backdrop-blur-xl"
                   placeholder="Tell me about your project..."
                 />
               </div>

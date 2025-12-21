@@ -58,7 +58,7 @@ const Footer = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-slate-800/30 border border-slate-700/30 flex items-center justify-center text-neon-accent hover:text-neon-green hover:border-neon-accent/50 hover:bg-slate-800/60 hover:shadow-glow-sm transition-all duration-300"
+                  className="w-10 h-10 rounded-lg bg-slate-800/30 border border-slate-700/30 flex items-center justify-center text-neon-accent hover:text-neon-green hover:border-neon-accent/50 hover:bg-slate-800/60 transition-all duration-300"
                   title={link.label}
                   aria-label={link.label}
                 >

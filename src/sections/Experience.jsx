@@ -72,7 +72,7 @@ const Experience = () => {
                 <div className="hidden md:flex items-center justify-center">
                   <div className="relative w-full">
                     <div className="flex justify-center">
-                      <div className="w-4 h-4 rounded-full bg-neon-accent absolute z-10 left-1/2 transform -translate-x-1/2 shadow-glow-md" />
+                      <div className="w-4 h-4 rounded-full bg-neon-accent absolute z-10 left-1/2 transform -translate-x-1/2" />
                     </div>
                   </div>
                 </div>

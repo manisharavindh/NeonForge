@@ -54,11 +54,8 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           {/* Image */}
           <div className="animate-slideIn">
-            <Card className="aspect-square flex items-center justify-center bg-gradient-to-br from-slate-800/30 via-transparent to-slate-900/30 group hover:bg-slate-800/50">
-              <div className="text-center">
-                <div className="text-9xl mb-4">👨‍💻</div>
-                <p className="text-slate-400 font-mono">Your Photo Here</p>
-              </div>
+            <Card className="aspect-square flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=600&fit=crop")' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-800/30 via-transparent to-slate-900/30" />
             </Card>
           </div>
 
@@ -93,7 +90,7 @@ const About = () => {
 
             {/* Download CV Button */}
             <div className="mt-10">
-              <button className="px-8 py-3 rounded-xl font-semibold transition-all duration-300 border border-neon-accent/30 text-neon-accent hover:bg-neon-accent/10 hover:border-neon-accent/60 hover:shadow-glow-sm">
+              <button className="px-8 py-3 rounded-xl font-semibold transition-all duration-300 border border-neon-accent/30 text-neon-accent hover:bg-neon-accent/10 hover:border-neon-accent/60">
                 Download My CV
               </button>
             </div>

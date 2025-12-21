@@ -70,15 +70,8 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-neon-accent/10 to-neon-teal/10 rounded-3xl blur-2xl" />
 
               {/* Illustration placeholder */}
-              <div className="relative glass rounded-3xl border border-slate-700/50 p-8 aspect-square flex items-center justify-center overflow-hidden group">
+              <div className="relative glass rounded-3xl border border-slate-700/50 p-8 aspect-square flex items-center justify-center overflow-hidden group bg-cover bg-center" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=600&fit=crop")' }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-800/20 via-transparent to-slate-900/20 group-hover:from-slate-800/40 group-hover:to-slate-900/40 transition-all duration-500" />
-
-                {/* Placeholder anime art */}
-                <div className="relative z-10 text-center">
-                  <div className="text-7xl mb-4 animate-float">✨</div>
-                  <p className="text-slate-500 font-mono text-base">Anime Illustration</p>
-                  <p className="text-slate-600 text-sm mt-2">Cyberpunk Style</p>
-                </div>
               </div>
 
               {/* Floating elements */}

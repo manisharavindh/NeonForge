@@ -92,10 +92,8 @@ const Projects = () => {
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image Placeholder */}
-              <div className="w-full h-40 bg-gradient-to-br from-slate-800/30 via-slate-900/20 to-slate-900/40 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-glow-md transition-shadow duration-300">
-                <div className="text-6xl opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300">
-                  {project.image}
-                </div>
+              <div className="w-full h-40 bg-gradient-to-br from-slate-800/30 via-slate-900/20 to-slate-900/40 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-300 bg-cover bg-center" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop")' }}>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
               </div>
 
               {/* Project Info */}

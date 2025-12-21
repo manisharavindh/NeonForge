@@ -97,7 +97,7 @@ a {
 
 /* Hover glow effect */
 .hover-glow {
-  @apply hover:shadow-neon-teal hover:shadow-lg transition-all duration-300;
+  @apply hover:border-neon-accent/60 transition-all duration-300;
 }
 
 /* Borders */
