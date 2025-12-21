@@ -1,6 +1,6 @@
 /**
  * Card Component
- * Refined glassmorphic card with smooth effects
+ * Terminal-style card
  */
 
 import React from 'react'
@@ -8,13 +8,13 @@ import React from 'react'
 const Card = ({ children, className = '', glowing = false, hoverable = true }) => {
   return (
     <div
-      className={`glass rounded-2xl p-7 transition-all duration-300 ${
+      className={`terminal-window rounded-none p-6 transition-all duration-300 ${
         glowing 
-          ? 'border-neon-accent/50' 
-          : 'border-slate-600/30'
+          ? 'border-neon-green/50' 
+          : 'border-neon-accent/30'
       } ${
         hoverable
-          ? 'hover:border-neon-accent/60 hover:scale-105 hover:bg-slate-800/60'
+          ? 'hover:border-neon-green/70 hover:scale-105 hover:bg-cyberpunk-card/80'
           : ''
       } ${className}`}
     >

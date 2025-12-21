@@ -1,12 +1,11 @@
 /**
  * Contact Section
- * Contact form with validation and modern design
+ * Terminal-style contact form
  */
 
 import React, { useState } from 'react'
 import SectionHeader from '../components/SectionHeader'
 import Button from '../components/Button'
-import Card from '../components/Card'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,38 +40,14 @@ const Contact = () => {
   }
 
   const contactMethods = [
-    {
-      icon: '📧',
-      label: 'Email',
-      value: 'hello@neonforge.dev',
-      href: 'mailto:hello@neonforge.dev',
-    },
-    {
-      icon: '💼',
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/neonforge',
-      href: 'https://linkedin.com',
-    },
-    {
-      icon: '💻',
-      label: 'GitHub',
-      value: 'github.com/neonforge',
-      href: 'https://github.com',
-    },
-    {
-      icon: '🐦',
-      label: 'Twitter',
-      value: '@neonforge_dev',
-      href: 'https://twitter.com',
-    },
+    { label: 'Email', value: 'hello@neonforge.dev', href: 'mailto:hello@neonforge.dev' },
+    { label: 'LinkedIn', value: 'linkedin.com/in/neonforge', href: 'https://linkedin.com' },
+    { label: 'GitHub', value: 'github.com/neonforge', href: 'https://github.com' },
+    { label: 'Twitter', value: '@neonforge_dev', href: 'https://twitter.com' },
   ]
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-neon-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-accent/5 rounded-full blur-3xl" />
-
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
           title="Get In Touch"
@@ -81,121 +56,139 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
-          <div>
-            <h3 className="text-2xl font-bold text-slate-100 mb-8">
-              Reach Out
-            </h3>
-
-            {/* Contact Methods */}
-            <div className="space-y-4 mb-12">
-              {contactMethods.map((method, index) => (
-                <a
-                  key={index}
-                  href={method.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 glass rounded-lg border border-slate-700/50 hover:border-neon-accent/50 hover:bg-slate-800/40 transition-all group"
-                >
-                  <div className="text-3xl group-hover:scale-125 transition-transform duration-300">
-                    {method.icon}
-                  </div>
-                  <div className="flex-grow">
-                    <div className="text-slate-500 text-sm">{method.label}</div>
-                    <div className="text-neon-accent font-medium group-hover:text-neon-green transition-colors">
-                      {method.value}
-                    </div>
-                  </div>
-                  <span className="text-neon-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                    →
-                  </span>
-                </a>
-              ))}
+          <div className="terminal-window terminal-scanlines">
+            <div className="terminal-header">
+              <div className="terminal-button terminal-button-red"></div>
+              <div className="terminal-button terminal-button-yellow"></div>
+              <div className="terminal-button terminal-button-green"></div>
+              <span className="ml-3 text-xs text-neon-accent font-mono">contact.log</span>
             </div>
 
-            {/* Follow up message */}
-            <Card className="bg-gradient-to-r from-neon-accent/5 to-neon-light/5">
-              <p className="text-slate-400 text-sm leading-relaxed">
-                I'm always interested in hearing about new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!
-              </p>
-            </Card>
+            <div className="terminal-body space-y-4">
+              <div>
+                <span className="terminal-prompt">➜</span>
+                <span className="text-slate-400 ml-1">~</span>
+                <span className="terminal-bracket"> $</span>
+                <span className="terminal-command"> cat contact.log</span>
+              </div>
+
+              <div className="pl-6 space-y-3">
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  I'm always interested in hearing about new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!
+                </p>
+
+                <div className="border-t border-neon-accent/20 pt-3 space-y-2">
+                  {contactMethods.map((method, index) => (
+                    <a
+                      key={index}
+                      href={method.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block p-2 border border-neon-accent/30 rounded-none hover:border-neon-green/60 hover:bg-neon-green/5 transition-all text-xs group"
+                    >
+                      <div className="text-slate-400">{method.label}</div>
+                      <div className="text-neon-accent group-hover:text-neon-green transition-colors font-mono">
+                        &gt; {method.value}
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Contact Form */}
-          <div>
-            {submitted && (
-              <div className="mb-6 p-4 glass rounded-lg border border-neon-accent/50 bg-neon-accent/10 text-neon-accent text-center font-medium">
-                ✓ Message sent successfully! I'll get back to you soon.
-              </div>
-            )}
+          <div className="terminal-window terminal-scanlines">
+            <div className="terminal-header">
+              <div className="terminal-button terminal-button-red"></div>
+              <div className="terminal-button terminal-button-yellow"></div>
+              <div className="terminal-button terminal-button-green"></div>
+              <span className="ml-3 text-xs text-neon-accent font-mono">send_message.sh</span>
+            </div>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Name Input */}
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent text-slate-100 placeholder-slate-500 focus:outline-none transition-all bg-slate-900/20 backdrop-blur-xl"
-                  placeholder="John Doe"
-                />
+            <div className="terminal-body">
+              {submitted && (
+                <div className="mb-4 p-3 border border-neon-green/50 bg-neon-green/10 text-neon-green text-center font-mono text-xs rounded-none">
+                  ✓ message_sent_successfully();
+                </div>
+              )}
+
+              <div className="mb-4">
+                <span className="terminal-prompt">➜</span>
+                <span className="text-slate-400 ml-1">~</span>
+                <span className="terminal-bracket"> $</span>
+                <span className="terminal-command"> ./send_message.sh</span>
               </div>
 
-              {/* Email Input */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent text-slate-100 placeholder-slate-500 focus:outline-none transition-all bg-slate-900/20 backdrop-blur-xl"
-                  placeholder="john@example.com"
-                />
-              </div>
+              <form onSubmit={handleSubmit} className="pl-6 space-y-4 font-mono text-xs">
+                {/* Name Input */}
+                <div>
+                  <label htmlFor="name" className="block text-slate-400 mb-1">
+                    $ name:
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-2 py-1 bg-cyberpunk-darker border border-neon-accent/40 text-neon-accent focus:border-neon-green outline-none rounded-none placeholder-slate-600 transition-all"
+                    placeholder="john_doe"
+                  />
+                </div>
 
-              {/* Message Input */}
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  className="w-full px-4 py-3 glass rounded-lg border border-slate-700/30 focus:border-neon-accent text-slate-100 placeholder-slate-500 focus:outline-none transition-all resize-none bg-slate-900/20 backdrop-blur-xl"
-                  placeholder="Tell me about your project..."
-                />
-              </div>
+                {/* Email Input */}
+                <div>
+                  <label htmlFor="email" className="block text-slate-400 mb-1">
+                    $ email:
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-2 py-1 bg-cyberpunk-darker border border-neon-accent/40 text-neon-accent focus:border-neon-green outline-none rounded-none placeholder-slate-600 transition-all"
+                    placeholder="john@example.com"
+                  />
+                </div>
 
-              {/* Submit Button */}
-              <Button
-                type="submit"
-                size="lg"
-                variant="primary"
-                className="w-full"
-                disabled={loading}
-              >
-                {loading ? '⌛ Sending...' : '📤 Send Message'}
-              </Button>
-            </form>
+                {/* Message Input */}
+                <div>
+                  <label htmlFor="message" className="block text-slate-400 mb-1">
+                    $ message:
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="4"
+                    className="w-full px-2 py-1 bg-cyberpunk-darker border border-neon-accent/40 text-neon-accent focus:border-neon-green outline-none rounded-none resize-none placeholder-slate-600 transition-all"
+                    placeholder="Tell me about your project..."
+                  />
+                </div>
 
-            {/* Privacy note */}
-            <p className="text-slate-500 text-xs mt-4 text-center">
-              I respect your privacy. Your information will never be shared.
-            </p>
+                {/* Submit Button */}
+                <Button
+                  type="submit"
+                  size="lg"
+                  variant="primary"
+                  className="w-full"
+                  disabled={loading}
+                >
+                  {loading ? '▌▌ Sending...' : '→ Send Message'}
+                </Button>
+              </form>
+
+              {/* Privacy note */}
+              <p className="text-slate-600 text-xs mt-4 pl-6 font-mono">
+                # Privacy: Your data will never be shared
+              </p>
+            </div>
           </div>
         </div>
       </div>

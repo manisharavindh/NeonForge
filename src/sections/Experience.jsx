@@ -5,7 +5,7 @@
 
 import React from 'react'
 import SectionHeader from '../components/SectionHeader'
-import Card from '../components/Card'
+import Badge from '../components/Badge'
 
 const Experience = () => {
   const experiences = [
@@ -15,7 +15,7 @@ const Experience = () => {
       duration: '2022 - Present',
       description: 'Leading AI/ML projects, mentoring junior engineers, and architecting scalable machine learning systems.',
       highlights: ['Led 5+ AI projects', 'Improved model accuracy by 23%', 'Mentored 8 engineers'],
-      icon: '🎯',
+      cmd: 'experience-1.log',
     },
     {
       role: 'Full-Stack Developer',
@@ -23,7 +23,7 @@ const Experience = () => {
       duration: '2020 - 2022',
       description: 'Built cloud-native applications, implemented CI/CD pipelines, and optimized database performance.',
       highlights: ['Deployed 15+ microservices', 'Reduced latency by 40%', '99.9% uptime'],
-      icon: '🚀',
+      cmd: 'experience-2.log',
     },
     {
       role: 'Machine Learning Engineer',
@@ -31,7 +31,7 @@ const Experience = () => {
       duration: '2019 - 2020',
       description: 'Developed predictive models, created data pipelines, and built recommendation systems.',
       highlights: ['Built 8 ML models', 'Processed 10M+ records daily', 'Achieved 92% accuracy'],
-      icon: '📊',
+      cmd: 'experience-3.log',
     },
     {
       role: 'Junior Developer',
@@ -39,15 +39,12 @@ const Experience = () => {
       duration: '2018 - 2019',
       description: 'Contributed to web applications, fixed bugs, and participated in code reviews.',
       highlights: ['Completed 20+ features', 'Reduced bug count by 50%', 'Earned Employee of Month'],
-      icon: '💡',
+      cmd: 'experience-4.log',
     },
   ]
 
   return (
     <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-neon-accent/5 rounded-full blur-3xl" />
-
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
           title="Professional Experience"
@@ -55,58 +52,48 @@ const Experience = () => {
         />
 
         {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-accent via-neon-teal to-transparent transform -translate-x-1/2" />
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <div key={index} className="terminal-window terminal-scanlines group">
+              {/* Terminal Header */}
+              <div className="terminal-header">
+                <div className="terminal-button terminal-button-red"></div>
+                <div className="terminal-button terminal-button-yellow"></div>
+                <div className="terminal-button terminal-button-green"></div>
+                <span className="ml-3 text-xs text-neon-accent font-mono">{exp.cmd}</span>
+              </div>
 
-          {/* Experience Items */}
-          <div className="space-y-8 md:space-y-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className={`flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 ${
-                  index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="hidden md:flex items-center justify-center">
-                  <div className="relative w-full">
-                    <div className="flex justify-center">
-                      <div className="w-4 h-4 rounded-full bg-neon-accent absolute z-10 left-1/2 transform -translate-x-1/2" />
-                    </div>
-                  </div>
+              {/* Terminal Body */}
+              <div className="terminal-body space-y-3">
+                <div>
+                  <span className="terminal-prompt">➜</span>
+                  <span className="text-slate-400 ml-1">~</span>
+                  <span className="terminal-bracket"> $</span>
+                  <span className="terminal-command"> cat {exp.cmd}</span>
                 </div>
 
-                {/* Content */}
-                <Card hoverable glowing={index % 2 === 0} className="group">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform">{exp.icon}</div>
-                    <div className="flex-grow">
-                      <h3 className="text-xl font-bold text-slate-100 group-hover:text-neon-accent transition-colors">{exp.role}</h3>
-                      <p className="text-neon-accent font-medium text-sm">{exp.company}</p>
-                      <p className="text-slate-500 text-sm">{exp.duration}</p>
-                    </div>
+                <div className="pl-6 space-y-2">
+                  <h3 className="text-sm font-bold text-neon-green group-hover:text-neon-green transition-colors">
+                    {exp.role}
+                  </h3>
+                  <div className="text-xs space-y-1">
+                    <p className="text-neon-accent">{exp.company}</p>
+                    <p className="text-slate-400">[{exp.duration}]</p>
+                    <p className="text-slate-300 leading-relaxed mt-2">{exp.description}</p>
                   </div>
-
-                  <p className="text-slate-400 mb-4 leading-relaxed">
-                    {exp.description}
-                  </p>
 
                   {/* Highlights */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-3 pt-2 border-t border-neon-accent/20">
                     {exp.highlights.map((highlight, idx) => (
-                      <div
-                        key={idx}
-                        className="px-3 py-1 bg-neon-accent/10 border border-neon-accent/30 rounded-full text-xs text-neon-accent font-medium hover:bg-neon-accent/20 transition-colors"
-                      >
+                      <Badge key={idx} variant="green">
                         {highlight}
-                      </div>
+                      </Badge>
                     ))}
                   </div>
-                </Card>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

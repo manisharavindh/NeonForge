@@ -12,10 +12,46 @@ html {
 }
 
 body {
-  @apply bg-cyberpunk-darker text-slate-100 font-sans overflow-x-hidden;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(110, 231, 183, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(196, 181, 253, 0.02) 0%, transparent 50%);
+  @apply bg-cyberpunk-darker text-neon-accent font-mono overflow-x-hidden;
+  background-image: none;
+}
+
+/* Terminal cursor animation */
+@keyframes blink {
+  0%, 49%, 100% { opacity: 1; }
+  50%, 99% { opacity: 0; }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #00ff88;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+/* Terminal scan lines */
+.terminal-scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
 }
 
 /* Smooth scrollbar */
@@ -28,16 +64,24 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-neon-accent rounded-full hover:bg-neon-teal transition-colors;
+  @apply bg-neon-accent rounded-full transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neon-green;
 }
 
 /* Selection styles */
 ::selection {
   @apply bg-neon-accent text-cyberpunk-darker;
+  background-color: #00ff88;
+  color: #0a0a0a;
 }
 
 ::-moz-selection {
   @apply bg-neon-accent text-cyberpunk-darker;
+  background-color: #00ff88;
+  color: #0a0a0a;
 }
 
 /* Focus states */
@@ -47,7 +91,7 @@ body {
 
 /* Link styles */
 a {
-  @apply text-neon-accent hover:text-neon-teal transition-colors duration-300;
+  @apply text-neon-accent hover:text-neon-green transition-colors duration-300 underline;
 }
 
 /* Refined animations */
@@ -77,22 +121,72 @@ a {
   animation: fadeIn 0.8s ease-out;
 }
 
+/* Terminal Window */
+.terminal-window {
+  @apply bg-cyberpunk-card border border-neon-accent/50 rounded-none;
+}
+
+.terminal-header {
+  @apply bg-cyberpunk-dark border-b border-neon-accent/50 px-4 py-2 flex items-center gap-2;
+}
+
+.terminal-button {
+  @apply text-neon-green;
+}
+
+.text-gradient-subtle {
+  @apply text-neon-accent;
+}
+
+/* Terminal prompt */
+.terminal-prompt {
+  @apply text-neon-green font-bold;
+}
+
+.terminal-command {
+  @apply text-neon-accent;
+}
+
+.terminal-output {
+  @apply text-neon-accent/80;
+}
+
+.terminal-path {
+  @apply text-neon-purple;
+}
+
+.terminal-bracket {
+  @apply text-neon-accent;
+}
+
+.terminal-button-yellow {
+  @apply bg-yellow-500;
+}
+
+.terminal-button-green {
+  @apply bg-neon-green;
+}
+
+.terminal-body {
+  @apply p-6 font-mono text-sm leading-relaxed;
+}
+
 /* Glassmorphism - refined */
 .glass {
-  @apply bg-slate-900/40 backdrop-blur-xl border border-slate-700/30 rounded-2xl;
+  @apply bg-cyberpunk-card/50 backdrop-blur-xl border border-neon-accent/20 rounded-none;
 }
 
 .glass-hover {
-  @apply glass hover:bg-slate-900/50 hover:border-slate-600/40 transition-all duration-300;
+  @apply glass hover:bg-cyberpunk-card/70 hover:border-neon-accent/40 transition-all duration-300;
 }
 
 /* Text gradients */
 .text-glow {
-  @apply bg-gradient-to-r from-neon-green via-neon-accent to-neon-teal bg-clip-text text-transparent;
+  @apply text-neon-green;
 }
 
 .text-gradient-subtle {
-  @apply bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent;
+  @apply text-neon-accent;
 }
 
 /* Hover glow effect */

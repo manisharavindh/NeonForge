@@ -38,10 +38,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-mono border-b border-neon-accent/30 ${
         scrolled
-          ? 'bg-cyberpunk-dark/80 backdrop-blur-xl'
-          : 'bg-transparent'
+          ? 'bg-cyberpunk-dark/95 backdrop-blur-xl'
+          : 'bg-cyberpunk-dark/50'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,23 +49,23 @@ const Navbar = () => {
           {/* Logo */}
           <div
             onClick={() => handleScroll('home')}
-            className="flex items-center gap-3 cursor-pointer group"
+            className="flex items-center gap-2 cursor-pointer group"
           >
-            <span className="text-lg font-bold bg-gradient-to-r from-neon-accent to-neon-teal bg-clip-text text-transparent">
-              NeonForge
+            <span className="text-lg font-bold text-neon-green">
+              <span className="terminal-bracket">$</span> neonforge
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 text-sm">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
-                className="text-slate-300 hover:text-neon-accent text-sm font-medium transition-colors duration-300 relative group"
+                className="text-neon-accent hover:text-neon-green text-xs font-mono transition-colors duration-300 relative group border border-neon-accent/20 px-3 py-1 hover:border-neon-green/50"
               >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-accent to-neon-teal group-hover:w-full transition-all duration-300" />
+                &gt; {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300" />
               </button>
             ))}
           </div>
@@ -96,14 +96,14 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 animate-slideIn bg-slate-900/40 backdrop-blur-xl rounded-b-2xl">
+          <div className="md:hidden pb-4 animate-slideIn bg-cyberpunk-card/80 backdrop-blur-xl border-t border-neon-accent/20">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
-                className="block w-full text-left px-4 py-3 text-slate-300 hover:text-neon-accent hover:bg-neon-accent/5 rounded transition-colors text-sm font-medium"
+                className="block w-full text-left px-4 py-3 text-neon-accent hover:text-neon-green hover:bg-neon-green/5 transition-colors text-xs font-mono border-b border-neon-accent/10"
               >
-                {item.label}
+                <span className="terminal-bracket">&gt;</span> {item.label}
               </button>
             ))}
           </div>

@@ -1,46 +1,45 @@
 /**
  * Achievements Section
- * Showcase awards and recognitions
+ * Terminal-style achievement display
  */
 
 import React from 'react'
 import SectionHeader from '../components/SectionHeader'
-import Card from '../components/Card'
 
 const Achievements = () => {
   const achievements = [
     {
-      icon: '🏆',
+      cmd: 'awards-1.log',
       title: 'Tech Innovator Award',
       organization: 'Annual Tech Summit 2023',
       description: 'Recognized for innovative AI solutions that transformed industry practices.',
     },
     {
-      icon: '⭐',
+      cmd: 'awards-2.log',
       title: 'Open Source Contributor',
       organization: 'GitHub Community',
       description: 'Active contributor to 10+ popular open-source projects with 500+ stars.',
     },
     {
-      icon: '📚',
+      cmd: 'awards-3.log',
       title: 'Published Author',
       organization: 'Medium & Dev.to',
       description: 'Written 50+ technical articles with 100K+ total reads on ML and web dev.',
     },
     {
-      icon: '🎓',
+      cmd: 'awards-4.log',
       title: 'Certified Cloud Architect',
       organization: 'AWS & Google Cloud',
       description: 'Professional certifications in cloud architecture and machine learning.',
     },
     {
-      icon: '🥇',
+      cmd: 'awards-5.log',
       title: 'Hackathon Winner',
       organization: 'International Tech Hackathon 2022',
       description: 'Led team to victory with innovative solution beating 500+ competitors.',
     },
     {
-      icon: '🌟',
+      cmd: 'awards-6.log',
       title: 'Speaker & Mentor',
       organization: 'Tech Conferences & Bootcamps',
       description: 'Speaker at 15+ conferences and mentor to 100+ aspiring developers.',
@@ -49,10 +48,6 @@ const Achievements = () => {
 
   return (
     <section id="achievements" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-neon-muted/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-accent/5 rounded-full blur-3xl" />
-
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
           title="Achievements & Recognition"
@@ -62,52 +57,69 @@ const Achievements = () => {
         {/* Achievements Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {achievements.map((achievement, index) => (
-            <Card
-              key={index}
-              hoverable
-              glowing={index % 2 === 0}
-              className="group text-center md:text-left flex flex-col"
-            >
-              {/* Icon */}
-              <div className="text-5xl mb-4 inline-block md:block group-hover:scale-125 transition-transform duration-300">
-                {achievement.icon}
+            <div key={index} className="terminal-window terminal-scanlines group">
+              {/* Terminal Header */}
+              <div className="terminal-header">
+                <div className="terminal-button terminal-button-red"></div>
+                <div className="terminal-button terminal-button-yellow"></div>
+                <div className="terminal-button terminal-button-green"></div>
+                <span className="ml-3 text-xs text-neon-accent font-mono">{achievement.cmd}</span>
               </div>
 
-              {/* Content */}
-              <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-neon-accent transition-colors">
-                {achievement.title}
-              </h3>
-              <p className="text-neon-accent text-sm font-medium mb-3">
-                {achievement.organization}
-              </p>
-              <p className="text-slate-400 text-sm leading-relaxed flex-grow">
-                {achievement.description}
-              </p>
+              {/* Terminal Body */}
+              <div className="terminal-body space-y-3">
+                <div>
+                  <span className="terminal-prompt">➜</span>
+                  <span className="text-slate-400 ml-1">~</span>
+                  <span className="terminal-bracket"> $</span>
+                  <span className="terminal-command"> cat {achievement.cmd}</span>
+                </div>
 
-              {/* Hover effect line */}
-              <div className="mt-4 h-1 bg-gradient-to-r from-neon-accent to-neon-light rounded-full w-0 group-hover:w-full transition-all duration-300" />
-            </Card>
+                <div className="pl-6 space-y-2">
+                  <h3 className="text-sm font-bold text-neon-green mb-1">
+                    ★ {achievement.title}
+                  </h3>
+                  <p className="text-neon-accent text-xs font-medium">{achievement.organization}</p>
+                  <p className="text-slate-300 text-xs leading-relaxed mt-2">
+                    {achievement.description}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* Stats row */}
-        <div className="grid md:grid-cols-4 gap-6">
-          {[
-            { number: '50+', label: 'Projects' },
-            { number: '30+', label: 'Happy Clients' },
-            { number: '100+', label: 'Articles' },
-            { number: '15+', label: 'Speaking Engagements' },
-          ].map((stat, index) => (
-            <Card
-              key={index}
-              className="text-center hover:bg-slate-800/50 transition-all"
-            >
-              <div className="text-3xl md:text-4xl font-bold text-neon-accent mb-2">
-                {stat.number}
-              </div>
-              <div className="text-slate-400 text-sm">{stat.label}</div>
-            </Card>
-          ))}
+        <div className="terminal-window terminal-scanlines">
+          <div className="terminal-header">
+            <div className="terminal-button terminal-button-red"></div>
+            <div className="terminal-button terminal-button-yellow"></div>
+            <div className="terminal-button terminal-button-green"></div>
+            <span className="ml-3 text-xs text-neon-accent font-mono">stats.json</span>
+          </div>
+          <div className="terminal-body">
+            <div>
+              <span className="terminal-prompt">➜</span>
+              <span className="text-slate-400 ml-1">~</span>
+              <span className="terminal-bracket"> $</span>
+              <span className="terminal-command"> cat stats.json</span>
+            </div>
+            <div className="pl-6 grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 font-mono text-xs">
+              {[
+                { number: '50+', label: 'Projects' },
+                { number: '30+', label: 'Happy Clients' },
+                { number: '100+', label: 'Articles' },
+                { number: '15+', label: 'Talks' },
+              ].map((stat, index) => (
+                <div key={index} className="border border-neon-accent/40 p-3 rounded-none hover:border-neon-green/60 transition-all">
+                  <div className="text-base md:text-lg font-bold text-neon-green mb-1">
+                    {stat.number}
+                  </div>
+                  <div className="text-slate-400 text-xs">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

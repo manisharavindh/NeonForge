@@ -21,30 +21,27 @@ const About = () => {
     {
       title: 'AI/ML Expertise',
       description: 'Deep learning, NLP, Computer Vision, and predictive analytics',
-      icon: '🤖',
+      command: 'ls --ai-ml/',
     },
     {
       title: 'Full-Stack Development',
       description: 'React, Node.js, Python, and cloud-native applications',
-      icon: '🚀',
+      command: 'ls --fullstack/',
     },
     {
       title: 'Problem Solver',
       description: 'Analytical mindset with focus on scalable solutions',
-      icon: '💡',
+      command: 'ls --solutions/',
     },
     {
       title: 'Continuous Learner',
       description: 'Always exploring emerging technologies and best practices',
-      icon: '📚',
+      command: 'ls --learn/',
     },
   ]
 
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-neon-muted/5 rounded-full blur-3xl" />
-
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
           title="About Me"
@@ -53,12 +50,27 @@ const About = () => {
 
         <div className="mb-16">
           {/* Content */}
-          <div>
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-slate-100 mb-6">Who I Am</h3>
-              <div className="space-y-4 text-slate-400 leading-relaxed">
+          <div className="terminal-window terminal-scanlines mb-12">
+            {/* Terminal Header */}
+            <div className="terminal-header">
+              <div className="terminal-button terminal-button-red"></div>
+              <div className="terminal-button terminal-button-yellow"></div>
+              <div className="terminal-button terminal-button-green"></div>
+              <span className="ml-3 text-xs text-neon-accent font-mono">neonforge@localhost about —</span>
+            </div>
+
+            {/* Terminal Body */}
+            <div className="terminal-body space-y-4">
+              <div>
+                <span className="terminal-prompt">➜</span>
+                <span className="terminal-path"> ~/about</span>
+                <span className="terminal-bracket"> $</span>
+                <span className="terminal-command"> cat profile.md</span>
+              </div>
+
+              <div className="space-y-4 text-slate-300 leading-relaxed pl-6">
                 <p>
-                  I'm a passionate AI/ML engineer and full-stack developer with expertise in building scalable applications and intelligent systems. My journey in tech has been marked by continuous learning and a drive to solve complex problems.
+                  I'm a passionate <span className="text-neon-green">AI/ML engineer</span> and <span className="text-neon-green">full-stack developer</span> with expertise in building scalable applications and intelligent systems. My journey in tech has been marked by continuous learning and a drive to solve complex problems.
                 </p>
                 <p>
                   With a strong foundation in computer science and real-world experience across startups and established tech companies, I bring both technical excellence and business acumen to every project.
@@ -67,37 +79,61 @@ const About = () => {
                   When I'm not coding, you'll find me exploring emerging technologies, contributing to open source, or sharing knowledge with the developer community.
                 </p>
               </div>
-            </div>
 
-            {/* Highlights */}
-            <div>
-              <h3 className="text-lg font-bold text-slate-100 mb-4">What I Do Best</h3>
-              <div className="flex flex-wrap gap-3">
+              {/* Skills */}
+              <div className="mt-8">
+                <span className="terminal-prompt">➜</span>
+                <span className="terminal-path"> ~/about</span>
+                <span className="terminal-bracket"> $</span>
+                <span className="terminal-command"> echo $EXPERTISE</span>
+              </div>
+              <div className="flex flex-wrap gap-3 pl-6">
                 {highlights.map((highlight) => (
                   <Badge key={highlight} variant="green">
-                    {highlight}
+                    [{highlight}]
                   </Badge>
                 ))}
               </div>
-            </div>
 
-            {/* Download CV Button */}
-            <div className="mt-10">
-              <button className="px-8 py-3 rounded-xl font-semibold transition-all duration-300 border border-neon-accent/30 text-neon-accent hover:bg-neon-accent/10 hover:border-neon-accent/60">
-                Download My CV
-              </button>
+              {/* Download CV */}
+              <div className="mt-8">
+                <span className="terminal-prompt">➜</span>
+                <span className="terminal-path"> ~/about</span>
+                <span className="terminal-bracket"> $</span>
+                <span className="terminal-command"> cat resume.pdf</span>
+              </div>
+              <div className="mt-4">
+                <button className="px-8 py-3 rounded-none font-mono border border-neon-accent/60 text-neon-accent hover:bg-neon-accent/10 hover:border-neon-green/80 transition-all duration-300 text-sm">
+                  &gt; Download My CV
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Info Cards */}
+        {/* Info Cards as terminal commands */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {infoCards.map((card, index) => (
-            <Card key={index} hoverable glowing={index % 2 === 0}>
-              <div className="text-4xl mb-4">{card.icon}</div>
-              <h3 className="text-lg font-bold text-neon-accent mb-2">{card.title}</h3>
-              <p className="text-slate-400 text-sm">{card.description}</p>
-            </Card>
+            <div key={index} className="terminal-window terminal-scanlines">
+              <div className="terminal-header">
+                <div className="terminal-button terminal-button-red"></div>
+                <div className="terminal-button terminal-button-yellow"></div>
+                <div className="terminal-button terminal-button-green"></div>
+                <span className="ml-3 text-xs text-neon-accent font-mono">{card.command}</span>
+              </div>
+              <div className="terminal-body space-y-3">
+                <div>
+                  <span className="terminal-prompt">➜</span>
+                  <span className="text-slate-400 ml-1">~</span>
+                  <span className="terminal-bracket"> $</span>
+                  <span className="terminal-command"> {card.command}</span>
+                </div>
+                <div className="pl-6 space-y-2">
+                  <h3 className="text-sm font-bold text-neon-green">{card.title}</h3>
+                  <p className="text-slate-400 text-xs">{card.description}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

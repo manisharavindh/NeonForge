@@ -1,6 +1,6 @@
 /**
  * Footer Component
- * Social links and copyright with modern styling
+ * Terminal-style footer with social links
  */
 
 import React from 'react'
@@ -9,60 +9,47 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    {
-      label: 'GitHub',
-      href: 'https://github.com',
-      icon: '🔗',
-    },
-    {
-      label: 'LinkedIn',
-      href: 'https://linkedin.com',
-      icon: '💼',
-    },
-    {
-      label: 'Twitter',
-      href: 'https://twitter.com',
-      icon: '𝕏',
-    },
-    {
-      label: 'Email',
-      href: 'mailto:hello@example.com',
-      icon: '✉️',
-    },
+    { label: 'GitHub', href: 'https://github.com', cmd: 'gh' },
+    { label: 'LinkedIn', href: 'https://linkedin.com', cmd: 'li' },
+    { label: 'Twitter', href: 'https://twitter.com', cmd: 'tw' },
+    { label: 'Email', href: 'mailto:hello@example.com', cmd: 'ml' },
   ]
 
   return (
-    <footer className="bg-slate-900/40 border-t border-slate-600/30 mt-20 backdrop-blur-xl">
+    <footer className="bg-cyberpunk-dark/80 border-t border-neon-accent/20 mt-20 backdrop-blur-xl font-mono">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-neon-green to-neon-accent rounded-lg flex items-center justify-center">
-                <span className="text-slate-900 font-bold">N</span>
-              </div>
-              <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-accent">NeonForge</span>
+          <div className="space-y-3">
+            <div className="text-neon-green text-sm">
+              <span className="terminal-bracket">$</span> neonforge --version
             </div>
-            <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
-              Building digital experiences that matter. Passionate AI/ML Engineer & Developer.
-            </p>
+            <div className="text-slate-400 text-xs">
+              <span className="text-neon-accent">v1.0.0</span>
+              <br />
+              <span className="text-slate-500"># Building digital experiences that matter</span>
+              <br />
+              <span className="text-slate-500"># Passionate AI/ML Engineer & Developer</span>
+            </div>
           </div>
 
           {/* Social Links */}
           <div className="flex flex-col items-start md:items-end gap-4">
-            <p className="text-slate-400 text-sm font-medium">Connect with me</p>
-            <div className="flex gap-3">
+            <div className="text-neon-green text-sm">
+              <span className="terminal-bracket">$</span> open --socials
+            </div>
+            <div className="flex gap-2">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-slate-800/30 border border-slate-700/30 flex items-center justify-center text-neon-accent hover:text-neon-green hover:border-neon-accent/50 hover:bg-slate-800/60 transition-all duration-300"
+                  className="px-3 py-1 border border-neon-accent/60 text-neon-accent hover:text-neon-green hover:border-neon-green/80 transition-all duration-300 text-xs rounded-none font-mono"
                   title={link.label}
                   aria-label={link.label}
                 >
-                  {link.icon}
+                  {link.cmd}
                 </a>
               ))}
             </div>
@@ -70,19 +57,28 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-slate-700/30 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs md:text-sm">
+        <div className="border-t border-neon-accent/20 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs font-mono">
             <p>
-              © {currentYear} NeonForge Portfolio. All rights reserved.
+              <span className="text-slate-600">#</span> © {currentYear} NeonForge. All rights reserved.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 text-xs">
               <a href="#" className="hover:text-neon-accent transition-colors">
-                Privacy Policy
+                privacy_policy.txt
               </a>
+              <span className="text-slate-700">|</span>
               <a href="#" className="hover:text-neon-accent transition-colors">
-                Terms of Service
+                terms.txt
               </a>
             </div>
+          </div>
+          
+          {/* Terminal cursor at end */}
+          <div className="mt-4 text-slate-600 text-xs font-mono">
+            <span className="terminal-prompt">➜</span>
+            <span className="text-slate-600 ml-1">~</span>
+            <span className="terminal-bracket"> $</span>
+            <span className="terminal-cursor"></span>
           </div>
         </div>
       </div>

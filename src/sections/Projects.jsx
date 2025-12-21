@@ -18,7 +18,7 @@ const Projects = () => {
       title: 'AI-Powered Chatbot Platform',
       description: 'An advanced conversational AI platform using LLMs and RAG technology for intelligent customer support.',
       tags: ['Python', 'FastAPI', 'React', 'OpenAI', 'Vector DB'],
-      image: '💬',
+      cmd: 'project-1.log',
       liveUrl: '#',
       githubUrl: '#',
     },
@@ -27,7 +27,7 @@ const Projects = () => {
       title: 'Real-time Data Analytics Dashboard',
       description: 'Interactive dashboard for visualizing real-time metrics with WebSocket integration and predictive analytics.',
       tags: ['React', 'Node.js', 'TensorFlow', 'AWS', 'D3.js'],
-      image: '📊',
+      cmd: 'project-2.log',
       liveUrl: '#',
       githubUrl: '#',
     },
@@ -36,7 +36,7 @@ const Projects = () => {
       title: 'Computer Vision Content Moderation',
       description: 'Deep learning model for automated content moderation using CNNs, detecting inappropriate images in real-time.',
       tags: ['Python', 'PyTorch', 'YOLO', 'Docker', 'AWS SageMaker'],
-      image: '🖼️',
+      cmd: 'project-3.log',
       liveUrl: '#',
       githubUrl: '#',
     },
@@ -45,7 +45,7 @@ const Projects = () => {
       title: 'Blockchain Supply Chain Tracker',
       description: 'Decentralized application for supply chain transparency using smart contracts and real-time GPS tracking.',
       tags: ['Solidity', 'Web3.js', 'React', 'Ethereum', 'Node.js'],
-      image: '⛓️',
+      cmd: 'project-4.log',
       liveUrl: '#',
       githubUrl: '#',
     },
@@ -54,7 +54,7 @@ const Projects = () => {
       title: 'Machine Learning Model Registry',
       description: 'Centralized platform for managing, versioning, and deploying ML models across teams and environments.',
       tags: ['MLflow', 'FastAPI', 'PostgreSQL', 'Docker', 'Kubernetes'],
-      image: '🧠',
+      cmd: 'project-5.log',
       liveUrl: '#',
       githubUrl: '#',
     },
@@ -63,7 +63,7 @@ const Projects = () => {
       title: 'E-Commerce Recommendation Engine',
       description: 'Collaborative filtering system delivering personalized product recommendations with 92% accuracy.',
       tags: ['Python', 'scikit-learn', 'PostgreSQL', 'Redis', 'FastAPI'],
-      image: '🛍️',
+      cmd: 'project-6.log',
       liveUrl: '#',
       githubUrl: '#',
     },
@@ -71,10 +71,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-neon-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-neon-muted/5 rounded-full blur-3xl" />
-
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeader
           title="Featured Projects"
@@ -84,59 +80,65 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {projects.map((project) => (
-            <Card
+            <div
               key={project.id}
-              hoverable
-              className="group flex flex-col h-full"
+              className="terminal-window terminal-scanlines group flex flex-col h-full"
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              {/* Project Image Placeholder */}
-              <div className="w-full h-40 bg-gradient-to-br from-slate-800/30 via-slate-900/20 to-slate-900/40 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                <div className="text-6xl opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300">
-                  {project.image}
+              {/* Terminal Header */}
+              <div className="terminal-header">
+                <div className="terminal-button terminal-button-red"></div>
+                <div className="terminal-button terminal-button-yellow"></div>
+                <div className="terminal-button terminal-button-green"></div>
+                <span className="ml-3 text-xs text-neon-accent font-mono">{project.cmd}</span>
+              </div>
+
+              {/* Terminal Body */}
+              <div className="terminal-body flex flex-col h-full">
+                <div className="mb-3">
+                  <span className="terminal-prompt">➜</span>
+                  <span className="text-slate-400 ml-1">~</span>
+                  <span className="terminal-bracket"> $</span>
+                  <span className="terminal-command"> cat {project.cmd}</span>
+                </div>
+
+                {/* Project Info */}
+                <div className="flex-grow pl-6 space-y-2">
+                  <h3 className="text-sm font-bold text-neon-green mb-2 group-hover:text-neon-green transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-slate-400 text-xs mb-3 line-clamp-3 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Tech Tags */}
+                <div className="flex flex-wrap gap-2 mb-3 pl-6">
+                  {project.tags.map((tag, index) => (
+                    <Badge key={index} variant={index % 2 === 0 ? 'green' : 'teal'}>
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                {/* Buttons */}
+                <div className="flex gap-2 pt-3 border-t border-neon-accent/20">
+                  <button
+                    onClick={() => window.open(project.liveUrl)}
+                    className="flex-1 px-3 py-2 text-xs border border-neon-accent/60 text-neon-accent hover:border-neon-green/80 hover:text-neon-green transition-all font-mono rounded-none"
+                  >
+                    &gt; Demo
+                  </button>
+                  <button
+                    onClick={() => window.open(project.githubUrl)}
+                    className="flex-1 px-3 py-2 text-xs border border-neon-accent/60 text-neon-accent hover:border-neon-green/80 hover:text-neon-green transition-all font-mono rounded-none"
+                  >
+                    &gt; Code
+                  </button>
                 </div>
               </div>
-
-              {/* Project Info */}
-              <div className="flex-grow">
-                <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-neon-accent transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-slate-400 text-sm mb-4 line-clamp-3 leading-relaxed">
-                  {project.description}
-                </p>
-              </div>
-
-              {/* Tech Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag, index) => (
-                  <Badge key={index} variant={index % 2 === 0 ? 'green' : 'teal'}>
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-
-              {/* Buttons */}
-              <div className="flex gap-2 pt-4 border-t border-slate-700/30">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="flex-1 text-center"
-                  onClick={() => window.open(project.liveUrl)}
-                >
-                  🔗 Demo
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="flex-1 text-center"
-                  onClick={() => window.open(project.githubUrl)}
-                >
-                  💻 Code
-                </Button>
-              </div>
-            </Card>
+            </div>
           ))}
         </div>
 
