@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+* {
+  @apply transition-all duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cyberpunk-darker text-gray-100 font-sans overflow-x-hidden;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyberpunk-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neon-green rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neon-teal;
+}
+
+/* Selection styles */
+::selection {
+  @apply bg-neon-green text-cyberpunk-darker;
+}
+
+::-moz-selection {
+  @apply bg-neon-green text-cyberpunk-darker;
+}
+
+/* Smooth focus states */
+:focus-visible {
+  @apply outline-none ring-2 ring-neon-green ring-offset-2 ring-offset-cyberpunk-dark rounded-md;
+}
+
+/* Button reset */
+button {
+  @apply cursor-pointer transition-all duration-300;
+}
+
+/* Link styles */
+a {
+  @apply text-neon-green hover:text-neon-teal transition-colors duration-300;
+}
+
+/* Smooth animations */
+@keyframes slideIn {
+  from {
+    @apply opacity-0 -translate-y-4;
+  }
+  to {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    @apply opacity-0;
+  }
+  to {
+    @apply opacity-100;
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Glassmorphism effect */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg;
+}
+
+.glass-glow {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg shadow-neon-green;
+}
+
+/* Text gradients */
+.text-glow {
+  @apply bg-gradient-to-r from-neon-green via-neon-teal to-neon-purple bg-clip-text text-transparent;
+}
+
+/* Hover glow effect */
+.hover-glow {
+  @apply hover:shadow-neon-green hover:shadow-lg transition-all duration-300;
+}
+
+/* Neon border effect */
+.neon-border {
+  @apply border border-neon-green;
+}
+
+.neon-border-teal {
+  @apply border border-neon-teal;
+}
