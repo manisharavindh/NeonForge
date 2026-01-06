@@ -9,9 +9,9 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-24 pb-10 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center pt-24 pb-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="terminal-window terminal-scanlines">
           <div className="terminal-header">
             <span className="ml-3 text-xs text-neon-accent font-mono">neonforge@localhost ~</span>
