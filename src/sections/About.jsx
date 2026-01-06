@@ -49,23 +49,17 @@ const About = () => {
         />
 
         <div className="mb-16">
-          {/* Content */}
           <div className="terminal-window terminal-scanlines mb-12">
-            {/* Terminal Header */}
             <div className="terminal-header">
-              <div className="terminal-button terminal-button-red"></div>
-              <div className="terminal-button terminal-button-yellow"></div>
-              <div className="terminal-button terminal-button-green"></div>
-              <span className="ml-3 text-xs text-neon-accent font-mono">neonforge@localhost about —</span>
+              <span className="ml-3 text-xs text-neon-accent font-mono">neonforge@localhost about ~</span>
             </div>
 
-            {/* Terminal Body */}
             <div className="terminal-body space-y-4">
               <div>
                 <span className="terminal-prompt">➜</span>
                 <span className="terminal-path"> ~/about</span>
-                <span className="terminal-bracket"> $</span>
-                <span className="terminal-command"> cat profile.md</span>
+                <span className="terminal-bracket">$ </span>
+                <span className="terminal-command">cat profile.md</span>
               </div>
 
               <div className="space-y-4 text-slate-300 leading-relaxed pl-6">
@@ -80,12 +74,11 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Skills */}
               <div className="mt-8">
                 <span className="terminal-prompt">➜</span>
                 <span className="terminal-path"> ~/about</span>
-                <span className="terminal-bracket"> $</span>
-                <span className="terminal-command"> echo $EXPERTISE</span>
+                <span className="terminal-bracket">$ </span>
+                <span className="terminal-command">echo $EXPERTISE</span>
               </div>
               <div className="flex flex-wrap gap-3 pl-6">
                 {highlights.map((highlight) => (
@@ -95,12 +88,11 @@ const About = () => {
                 ))}
               </div>
 
-              {/* Download CV */}
               <div className="mt-8">
                 <span className="terminal-prompt">➜</span>
                 <span className="terminal-path"> ~/about</span>
-                <span className="terminal-bracket"> $</span>
-                <span className="terminal-command"> cat resume.pdf</span>
+                <span className="terminal-bracket">$ </span>
+                <span className="terminal-command">cat resume.pdf</span>
               </div>
               <div className="mt-4">
                 <button className="px-8 py-3 rounded-none font-mono border border-neon-accent/60 text-neon-accent hover:bg-neon-accent/10 hover:border-neon-green/80 transition-all duration-300 text-sm">
@@ -111,16 +103,12 @@ const About = () => {
           </div>
         </div>
 
-        {/* Info Cards as terminal commands */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {infoCards.map((card, index) => (
             <div key={index} className="terminal-window terminal-scanlines">
-              <div className="terminal-header">
-                <div className="terminal-button terminal-button-red"></div>
-                <div className="terminal-button terminal-button-yellow"></div>
-                <div className="terminal-button terminal-button-green"></div>
+              {/* <div className="terminal-header">
                 <span className="ml-3 text-xs text-neon-accent font-mono">{card.command}</span>
-              </div>
+              </div> */}
               <div className="terminal-body space-y-3">
                 <div>
                   <span className="terminal-prompt">➜</span>

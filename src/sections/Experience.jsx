@@ -51,19 +51,13 @@ const Experience = () => {
           subtitle="Career journey and achievements"
         />
 
-        {/* Timeline */}
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div key={index} className="terminal-window terminal-scanlines group">
-              {/* Terminal Header */}
-              <div className="terminal-header">
-                <div className="terminal-button terminal-button-red"></div>
-                <div className="terminal-button terminal-button-yellow"></div>
-                <div className="terminal-button terminal-button-green"></div>
+              {/* <div className="terminal-header">
                 <span className="ml-3 text-xs text-neon-accent font-mono">{exp.cmd}</span>
-              </div>
+              </div> */}
 
-              {/* Terminal Body */}
               <div className="terminal-body space-y-3">
                 <div>
                   <span className="terminal-prompt">➜</span>
@@ -82,7 +76,6 @@ const Experience = () => {
                     <p className="text-slate-300 leading-relaxed mt-2">{exp.description}</p>
                   </div>
 
-                  {/* Highlights */}
                   <div className="flex flex-wrap gap-2 mt-3 pt-2 border-t border-neon-accent/20">
                     {exp.highlights.map((highlight, idx) => (
                       <Badge key={idx} variant="green">

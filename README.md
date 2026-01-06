@@ -1,2 +1,2 @@
 # NeonForge
-NeonForge - developer portfolio
+NeonForge - a terminal themed developer portfolio

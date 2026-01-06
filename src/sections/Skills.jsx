@@ -40,16 +40,12 @@ const Skills = () => {
           subtitle="Technologies and competencies I excel with"
         />
 
-        {/* Skills Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
             <div key={index} className="terminal-window terminal-scanlines">
-              <div className="terminal-header">
-                <div className="terminal-button terminal-button-red"></div>
-                <div className="terminal-button terminal-button-yellow"></div>
-                <div className="terminal-button terminal-button-green"></div>
+              {/* <div className="terminal-header">
                 <span className="ml-3 text-xs text-neon-accent font-mono">{category.command}</span>
-              </div>
+              </div> */}
               <div className="terminal-body">
                 <div className="space-y-3">
                   <div>
@@ -75,16 +71,11 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Proficiency Section */}
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Technical Proficiency */}
           <div className="terminal-window terminal-scanlines">
-            <div className="terminal-header">
-              <div className="terminal-button terminal-button-red"></div>
-              <div className="terminal-button terminal-button-yellow"></div>
-              <div className="terminal-button terminal-button-green"></div>
+            {/* <div className="terminal-header">
               <span className="ml-3 text-xs text-neon-accent font-mono">proficiency.log</span>
-            </div>
+            </div> */}
             <div className="terminal-body space-y-4">
               <div>
                 <span className="terminal-prompt">➜</span>
@@ -116,14 +107,10 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Soft Skills */}
           <div className="terminal-window terminal-scanlines">
-            <div className="terminal-header">
-              <div className="terminal-button terminal-button-red"></div>
-              <div className="terminal-button terminal-button-yellow"></div>
-              <div className="terminal-button terminal-button-green"></div>
+            {/* <div className="terminal-header">
               <span className="ml-3 text-xs text-neon-accent font-mono">soft-skills.log</span>
-            </div>
+            </div> */}
             <div className="terminal-body">
               <div className="space-y-3">
                 <div>

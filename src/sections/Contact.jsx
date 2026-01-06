@@ -55,7 +55,6 @@ const Contact = () => {
         />
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Contact Info */}
           <div className="terminal-window terminal-scanlines">
             <div className="terminal-header">
               <div className="terminal-button terminal-button-red"></div>
@@ -97,7 +96,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="terminal-window terminal-scanlines">
             <div className="terminal-header">
               <div className="terminal-button terminal-button-red"></div>
@@ -121,7 +119,6 @@ const Contact = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="pl-6 space-y-4 font-mono text-xs">
-                {/* Name Input */}
                 <div>
                   <label htmlFor="name" className="block text-slate-400 mb-1">
                     $ name:
@@ -138,7 +135,6 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* Email Input */}
                 <div>
                   <label htmlFor="email" className="block text-slate-400 mb-1">
                     $ email:
@@ -155,7 +151,6 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* Message Input */}
                 <div>
                   <label htmlFor="message" className="block text-slate-400 mb-1">
                     $ message:
@@ -172,7 +167,6 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <Button
                   type="submit"
                   size="lg"
@@ -184,7 +178,6 @@ const Contact = () => {
                 </Button>
               </form>
 
-              {/* Privacy note */}
               <p className="text-slate-600 text-xs mt-4 pl-6 font-mono">
                 # Privacy: Your data will never be shared
               </p>

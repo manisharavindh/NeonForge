@@ -77,7 +77,6 @@ const Projects = () => {
           subtitle="Showcasing my best work and innovations"
         />
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {projects.map((project) => (
             <div
@@ -86,15 +85,10 @@ const Projects = () => {
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              {/* Terminal Header */}
-              <div className="terminal-header">
-                <div className="terminal-button terminal-button-red"></div>
-                <div className="terminal-button terminal-button-yellow"></div>
-                <div className="terminal-button terminal-button-green"></div>
+              {/* <div className="terminal-header">
                 <span className="ml-3 text-xs text-neon-accent font-mono">{project.cmd}</span>
-              </div>
+              </div> */}
 
-              {/* Terminal Body */}
               <div className="terminal-body flex flex-col h-full">
                 <div className="mb-3">
                   <span className="terminal-prompt">➜</span>
@@ -103,7 +97,6 @@ const Projects = () => {
                   <span className="terminal-command"> cat {project.cmd}</span>
                 </div>
 
-                {/* Project Info */}
                 <div className="flex-grow pl-6 space-y-2">
                   <h3 className="text-sm font-bold text-neon-green mb-2 group-hover:text-neon-green transition-colors duration-300">
                     {project.title}
@@ -113,7 +106,6 @@ const Projects = () => {
                   </p>
                 </div>
 
-                {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 mb-3 pl-6">
                   {project.tags.map((tag, index) => (
                     <Badge key={index} variant={index % 2 === 0 ? 'green' : 'teal'}>
@@ -122,7 +114,6 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Buttons */}
                 <div className="flex gap-2 pt-3 border-t border-neon-accent/20">
                   <button
                     onClick={() => window.open(project.liveUrl)}
@@ -142,7 +133,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* View All Projects Button */}
         <div className="text-center">
           <Button size="lg" variant="secondary">
             View All Projects

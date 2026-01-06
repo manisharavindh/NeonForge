@@ -54,19 +54,13 @@ const Achievements = () => {
           subtitle="Milestones and accomplishments"
         />
 
-        {/* Achievements Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {achievements.map((achievement, index) => (
             <div key={index} className="terminal-window terminal-scanlines group">
-              {/* Terminal Header */}
-              <div className="terminal-header">
-                <div className="terminal-button terminal-button-red"></div>
-                <div className="terminal-button terminal-button-yellow"></div>
-                <div className="terminal-button terminal-button-green"></div>
+              {/* <div className="terminal-header">
                 <span className="ml-3 text-xs text-neon-accent font-mono">{achievement.cmd}</span>
-              </div>
+              </div> */}
 
-              {/* Terminal Body */}
               <div className="terminal-body space-y-3">
                 <div>
                   <span className="terminal-prompt">➜</span>
@@ -89,12 +83,8 @@ const Achievements = () => {
           ))}
         </div>
 
-        {/* Stats row */}
         <div className="terminal-window terminal-scanlines">
           <div className="terminal-header">
-            <div className="terminal-button terminal-button-red"></div>
-            <div className="terminal-button terminal-button-yellow"></div>
-            <div className="terminal-button terminal-button-green"></div>
             <span className="ml-3 text-xs text-neon-accent font-mono">stats.json</span>
           </div>
           <div className="terminal-body">
