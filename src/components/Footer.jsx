@@ -9,10 +9,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { label: 'GitHub', href: 'https://github.com', cmd: 'gh' },
-    { label: 'LinkedIn', href: 'https://linkedin.com', cmd: 'li' },
-    { label: 'Twitter', href: 'https://twitter.com', cmd: 'tw' },
-    { label: 'Email', href: 'mailto:hello@example.com', cmd: 'ml' },
+    { label: 'GitHub', href: 'https://github.com', cmd: 'gh', color: 'neon-cyan' },
+    { label: 'LinkedIn', href: 'https://linkedin.com', cmd: 'li', color: 'neon-green' },
+    { label: 'Twitter', href: 'https://twitter.com', cmd: 'tw', color: 'neon-purple' },
+    { label: 'Email', href: 'mailto:hello@example.com', cmd: 'ml', color: 'neon-cyan' },
   ]
 
   return (
@@ -21,11 +21,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-3">
-            <div className="text-neon-green text-sm">
+            <div className="text-neon-cyan text-sm">
               <span className="terminal-bracket">$</span> neonforge --version
             </div>
             <div className="text-slate-400 text-xs">
-              <span className="text-neon-accent">v1.0.0</span>
+              <span className="text-neon-cyan">v1.0.0</span>
               <br />
               <span className="text-slate-500"># Building digital experiences that matter</span>
               <br />
@@ -35,7 +35,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex flex-col items-start md:items-end gap-4">
-            <div className="text-sm">
+            <div className="text-neon-green text-sm">
               <span className="terminal-bracket">$</span> open --socials
             </div>
             <div className="flex gap-2">
@@ -45,7 +45,7 @@ const Footer = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1 border border-neon-accent/60 text-neon-accent hover:text-neon-green hover:border-neon-green/80 transition-all duration-300 text-xs rounded-none font-mono"
+                  className={`px-3 py-1 border border-${link.color}/60 text-${link.color} hover:border-${link.color}/80 hover:bg-${link.color}/10 transition-all duration-300 text-xs rounded-none font-mono`}
                   title={link.label}
                   aria-label={link.label}
                 >

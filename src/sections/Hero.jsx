@@ -36,7 +36,7 @@ const Hero = () => {
             
             <div className="text-2xl md:text-4xl font-bold leading-tight space-y-2">
               <div className="terminal-output">
-                <span className="text-neon-green">Building</span> Digital Experiences That Matter
+                <span className="text-neon-cyan">Building</span> <span className="text-neon-green">Digital Experiences</span> <span className="text-neon-cyan">That Matter</span>
               </div>
             </div>
 
@@ -58,10 +58,10 @@ const Hero = () => {
               <span className="terminal-bracket">$ </span>
               <span className="terminal-command">cat stats.json</span>
             </div>
-            <div className="bg-cyberpunk-darker/50 border border-neon-accent/20 p-4 rounded-none mt-4 font-mono text-xs space-y-2">
-              <div><span className="text-neon-purple">"projects_completed"</span><span className="text-neon-accent">:</span> <span className="text-neon-green">50+</span><span className="text-slate-400">,</span></div>
-              <div><span className="text-neon-purple">"happy_clients"</span><span className="text-neon-accent">:</span> <span className="text-neon-green">30+</span><span className="text-slate-400">,</span></div>
-              <div><span className="text-neon-purple">"years_experience"</span><span className="text-neon-accent">:</span> <span className="text-neon-green">5+</span></div>
+            <div className="bg-cyberpunk-darker/50 border border-neon-cyan/20 p-4 rounded-none mt-4 font-mono text-xs space-y-2">
+              <div><span className="text-neon-cyan">"projects_completed"</span><span className="text-neon-green">:</span> <span className="text-neon-green">50+</span><span className="text-slate-400">,</span></div>
+              <div><span className="text-neon-purple">"happy_clients"</span><span className="text-neon-green">:</span> <span className="text-neon-cyan">30+</span><span className="text-slate-400">,</span></div>
+              <div><span className="text-neon-cyan">"years_experience"</span><span className="text-neon-green">:</span> <span className="text-neon-green">5+</span></div>
             </div>
 
             <div className="mt-12 pt-4 border-t border-neon-accent/20">

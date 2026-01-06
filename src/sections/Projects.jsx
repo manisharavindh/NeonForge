@@ -77,27 +77,33 @@ const Projects = () => {
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {projects.map((project) => (
+          {projects.map((project, idx) => {
+            const colorClasses = {
+              cyan: { border: 'border-neon-cyan/40 hover:border-neon-cyan/70', title: 'text-neon-cyan', button: 'border-neon-cyan/60 text-neon-cyan hover:border-neon-cyan/80 hover:bg-neon-cyan/10' },
+              green: { border: 'border-neon-green/40 hover:border-neon-green/70', title: 'text-neon-green', button: 'border-neon-green/60 text-neon-green hover:border-neon-green/80 hover:bg-neon-green/10' },
+              purple: { border: 'border-neon-purple/40 hover:border-neon-purple/70', title: 'text-neon-purple', button: 'border-neon-purple/60 text-neon-purple hover:border-neon-purple/80 hover:bg-neon-purple/10' }
+            };
+            const colors = ['cyan', 'green', 'purple'];
+            const color = colors[idx % colors.length];
+            const classes = colorClasses[color];
+            
+            return (
             <div
               key={project.id}
-              className="terminal-window terminal-scanlines group flex flex-col h-full"
+              className={`terminal-window terminal-scanlines group flex flex-col h-full transition-all duration-300 ${classes.border}`}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              {/* <div className="terminal-header">
-                <span className="ml-3 text-xs text-neon-accent font-mono">{project.cmd}</span>
-              </div> */}
-
               <div className="terminal-body flex flex-col h-full">
                 <div className="mb-3">
                   <span className="terminal-prompt">➜</span>
                   <span className="text-slate-400 ml-1">~</span>
-                  <span className="terminal-bracket"> $</span>
-                  <span className="terminal-command"> cat {project.cmd}</span>
+                  <span className={`terminal-bracket ${classes.title}`}> $</span>
+                  <span className={`terminal-command ${classes.title}`}> cat {project.cmd}</span>
                 </div>
 
                 <div className="flex-grow pl-6 space-y-2">
-                  <h3 className="text-sm font-bold text-neon-green mb-2 group-hover:text-neon-green transition-colors duration-300">
+                  <h3 className={`text-sm font-bold ${classes.title} mb-2 group-hover:text-neon-green transition-colors duration-300`}>
                     {project.title}
                   </h3>
                   <p className="text-slate-400 text-xs mb-3 line-clamp-3 leading-relaxed">
@@ -106,30 +112,34 @@ const Projects = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-3 pl-6">
-                  {project.tags.map((tag, index) => (
-                    <Badge key={index} variant={index % 2 === 0 ? 'green' : 'teal'}>
-                      {tag}
-                    </Badge>
-                  ))}
+                  {project.tags.map((tag, index) => {
+                    const badgeColors = ['cyan', 'green', 'purple'];
+                    return (
+                      <Badge key={index} variant={badgeColors[index % badgeColors.length]}>
+                        {tag}
+                      </Badge>
+                    );
+                  })}
                 </div>
 
-                <div className="flex gap-2 pt-3 border-t border-neon-accent/20">
+                <div className="flex gap-2 pt-3 border-t border-neon-cyan/20">
                   <button
                     onClick={() => window.open(project.liveUrl)}
-                    className="flex-1 px-3 py-2 text-xs border border-neon-accent/60 text-neon-accent hover:border-neon-green/80 hover:text-neon-green transition-all font-mono rounded-none"
+                    className={`flex-1 px-3 py-2 text-xs border ${classes.button} transition-all font-mono rounded-none`}
                   >
                     &gt; Demo
                   </button>
                   <button
                     onClick={() => window.open(project.githubUrl)}
-                    className="flex-1 px-3 py-2 text-xs border border-neon-accent/60 text-neon-accent hover:border-neon-green/80 hover:text-neon-green transition-all font-mono rounded-none"
+                    className={`flex-1 px-3 py-2 text-xs border ${classes.button} transition-all font-mono rounded-none`}
                   >
                     &gt; Code
                   </button>
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="text-center">

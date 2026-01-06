@@ -8,19 +8,19 @@ export default {
     extend: {
       colors: {
         neon: {
-          green: '#34d399',      // Soft emerald green
-          teal: '#2dd4bf',       // Soft teal-green
-          purple: '#10b981',     // Medium emerald
-          pink: '#6ee7b7',       // Light mint green
-          accent: '#34d399',     // Soft emerald accent
-          light: '#a7f3d0',      // Very light mint
-          muted: '#059669',      // Dark emerald
+          green: '#00ff88',      // Primary accent
+          cyan: '#00f0ff',       // Primary color
+          purple: '#d946ef',     // Interactive accents
+          pink: '#ff006e',       // Hover/emphasis
+          accent: '#00f0ff',     // Alias for cyan
+          light: '#e0ffff',      // Light text
+          muted: '#4a5568',      // Muted gray
         },
         cyberpunk: {
-          dark: '#0a1a0a',       // Dark background
-          darker: '#050d05',     // Very dark background
-          card: '#0d1a0d',       // Dark card
-          border: '#1a3a1a',     // Green border
+          dark: '#0a0e27',       // Dark navy background
+          darker: '#050812',     // Very dark navy
+          card: '#0f1535',       // Dark blue card
+          border: '#1a2a4a',     // Blue border
         }
       },
       fontFamily: {

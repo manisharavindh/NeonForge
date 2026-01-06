@@ -63,13 +63,13 @@ const About = () => {
 
               <div className="space-y-4 text-slate-300 leading-relaxed pl-6">
                 <p>
-                  I'm a passionate <span className="text-neon-green">AI/ML engineer</span> and <span className="text-neon-green">full-stack developer</span> with expertise in building scalable applications and intelligent systems. My journey in tech has been marked by continuous learning and a drive to solve complex problems.
+                  I'm a passionate <span className="text-neon-cyan">AI/ML engineer</span> and <span className="text-neon-green">full-stack developer</span> with expertise in building scalable applications and intelligent systems. My journey in tech has been marked by continuous learning and a drive to solve complex problems.
                 </p>
                 <p>
-                  With a strong foundation in computer science and real-world experience across startups and established tech companies, I bring both technical excellence and business acumen to every project.
+                  With a strong foundation in computer science and real-world experience across startups and established tech companies, I bring both <span className="text-neon-green">technical excellence</span> and <span className="text-neon-cyan">business acumen</span> to every project.
                 </p>
                 <p>
-                  When I'm not coding, you'll find me exploring emerging technologies, contributing to open source, or sharing knowledge with the developer community.
+                  When I'm not coding, you'll find me exploring emerging technologies, contributing to open source, or sharing knowledge with the <span className="text-neon-purple">developer community</span>.
                 </p>
               </div>
 
@@ -94,7 +94,7 @@ const About = () => {
                 <span className="terminal-command">cat resume.pdf</span>
               </div>
               <div className="mt-4">
-                <button className="px-8 py-3 rounded-none font-mono border border-neon-accent/60 text-neon-accent hover:bg-neon-accent/10 hover:border-neon-green/80 transition-all duration-300 text-sm">
+                <button className="px-8 py-3 rounded-none font-mono border border-neon-cyan/60 text-neon-cyan hover:bg-neon-cyan/10 hover:border-neon-cyan/80 hover:shadow-[0_0_15px_rgba(0,240,255,0.3)] transition-all duration-300 text-sm">
                   &gt; Download My CV
                 </button>
               </div>

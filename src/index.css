@@ -13,8 +13,9 @@ html {
 
 body {
   @apply bg-cyberpunk-darker text-neon-light font-mono overflow-x-hidden;
-  background-image: linear-gradient(135deg, #050d05 0%, #0d1a0d 50%, #0a1a0a 100%);
+  background: linear-gradient(135deg, #050812 0%, #0a0e27 25%, #1a0a2e 50%, #0f1535 75%, #050812 100%);
   background-attachment: fixed;
+  background-size: 400% 400%;
 }
 
 /* Terminal cursor animation */
@@ -27,9 +28,10 @@ body {
   display: inline-block;
   width: 2px;
   height: 1em;
-  background-color: #34d399;
+  background-color: #00ff88;
   animation: blink 1s infinite;
   margin-left: 2px;
+  box-shadow: 0 0 10px #00ff88;
 }
 
 /* Terminal scan lines */
@@ -65,29 +67,29 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-neon-green rounded-full transition-colors;
+  @apply bg-neon-cyan rounded-full transition-colors;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neon-light;
+  @apply bg-neon-green;
 }
 
 /* Selection styles */
 ::selection {
-  @apply bg-neon-accent text-cyberpunk-darker;
-  background-color: #34d399;
-  color: #050d05;
+  @apply bg-neon-cyan text-cyberpunk-darker;
+  background-color: #00f0ff;
+  color: #050812;
 }
 
 ::-moz-selection {
-  @apply bg-neon-accent text-cyberpunk-darker;
-  background-color: #34d399;
-  color: #050d05;
+  @apply bg-neon-cyan text-cyberpunk-darker;
+  background-color: #00f0ff;
+  color: #050812;
 }
 
 /* Focus states */
 :focus-visible {
-  @apply outline-none ring-2 ring-neon-green ring-offset-2 ring-offset-cyberpunk-dark rounded-lg;
+  @apply outline-none;
 }
 
 /* Link styles */
@@ -124,11 +126,15 @@ a {
 
 /* Terminal Window */
 .terminal-window {
-  @apply bg-cyberpunk-card border border-neon-green/50 rounded-none;
+  @apply bg-cyberpunk-card border border-neon-cyan/40 rounded-none transition-all duration-300;
+}
+
+.terminal-window:hover {
+  @apply border-neon-cyan/60 shadow-[0_0_15px_rgba(0,240,255,0.1)];
 }
 
 .terminal-header {
-  @apply bg-cyberpunk-dark border-b border-neon-green/50 px-4 py-2 flex items-center gap-2;
+  @apply bg-cyberpunk-dark border-b border-neon-cyan/40 px-4 py-2 flex items-center gap-2;
 }
 
 .terminal-button {
@@ -141,7 +147,7 @@ a {
 
 /* Terminal prompt */
 .terminal-prompt {
-  @apply text-neon-green font-bold;
+  @apply text-neon-cyan font-bold;
 }
 
 .terminal-command {
@@ -153,7 +159,7 @@ a {
 }
 
 .terminal-path {
-  @apply text-neon-green;
+  @apply text-neon-cyan;
 }
 
 .terminal-bracket {
@@ -168,17 +174,21 @@ a {
   @apply bg-neon-green;
 }
 
+.terminal-button-red {
+  @apply bg-neon-pink;
+}
+
 .terminal-body {
   @apply p-6 font-mono text-sm leading-relaxed;
 }
 
 /* Glassmorphism - refined */
 .glass {
-  @apply bg-cyberpunk-card/50 backdrop-blur-xl border border-neon-green/20 rounded-none;
+  @apply bg-cyberpunk-card/50 backdrop-blur-xl border border-neon-cyan/20 rounded-none;
 }
 
 .glass-hover {
-  @apply glass hover:bg-cyberpunk-card/70 hover:border-neon-green/40 transition-all duration-300;
+  @apply glass hover:bg-cyberpunk-card/70 hover:border-neon-cyan/40 transition-all duration-300;
 }
 
 /* Text gradients */
@@ -186,21 +196,70 @@ a {
   @apply text-neon-pink;
 }
 
-.text-gradient-subtle {
-  @apply text-neon-light;
-}
-
 /* Hover glow effect */
 .hover-glow {
-  @apply hover:border-neon-green/60 transition-all duration-300;
+  @apply hover:border-neon-cyan/60 transition-all duration-300;
 }
 
 /* Borders */
 .border-accent {
-  @apply border-neon-green/30;
+  @apply border-neon-cyan/30;
 }
 
 .border-accent-hover {
-  @apply border-neon-green/30 hover:border-neon-green/60 transition-colors duration-300;
+  @apply border-neon-cyan/30 hover:border-neon-cyan/60 transition-colors duration-300;
+}
+
+/* Multicolor gradient animations */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00ff88, #00f0ff, #d946ef, #ff006e, #00ff88);
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glowing text effects */
+.text-glow-cyan {
+  @apply text-neon-cyan;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.text-glow-green {
+  @apply text-neon-green;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.text-glow-purple {
+  @apply text-neon-purple;
+  text-shadow: 0 0 10px rgba(217, 70, 239, 0.5);
+}
+
+.text-glow-pink {
+  @apply text-neon-pink;
+  text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+}
+
+/* Section transitions */
+section {
+  @apply transition-all duration-500;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-all duration-300;
 }
 

@@ -40,34 +40,44 @@ const Skills = () => {
         />
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {skillCategories.map((category, index) => (
+          {skillCategories.map((category, index) => {
+            const colorClasses = {
+              cyan: 'text-neon-cyan',
+              green: 'text-neon-green',
+              purple: 'text-neon-purple'
+            };
+            const categoryColors = ['cyan', 'green', 'purple'];
+            const color = categoryColors[index % categoryColors.length];
+            
+            return (
             <div key={index} className="terminal-window terminal-scanlines">
-              {/* <div className="terminal-header">
-                <span className="ml-3 text-xs text-neon-accent font-mono">{category.command}</span>
-              </div> */}
               <div className="terminal-body">
                 <div className="space-y-3">
                   <div>
                     <span className="terminal-prompt">➜</span>
                     <span className="text-slate-400 ml-1">~</span>
-                    <span className="terminal-bracket"> $</span>
-                    <span className="terminal-command"> {category.command}</span>
+                    <span className={`terminal-bracket ${colorClasses[color]}`}> $</span>
+                    <span className={`terminal-command ${colorClasses[color]}`}> {category.command}</span>
                   </div>
                   
                   <div className="pl-6">
-                    <h3 className="text-sm font-bold text-neon-green mb-3"># {category.name}</h3>
+                    <h3 className={`text-sm font-bold ${colorClasses[color]} mb-3`}># {category.name}</h3>
                     <div className="flex flex-wrap gap-2">
-                      {category.skills.map((skill, idx) => (
-                        <Badge key={idx} variant="green">
-                          {skill}
-                        </Badge>
-                      ))}
+                      {category.skills.map((skill, idx) => {
+                        const skillColors = ['cyan', 'green', 'purple'];
+                        return (
+                          <Badge key={idx} variant={skillColors[idx % skillColors.length]}>
+                            {skill}
+                          </Badge>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -84,19 +94,19 @@ const Skills = () => {
               </div>
               <div className="pl-6 space-y-4 font-mono text-xs">
                 {[
-                  { name: 'Frontend Development', level: 95 },
-                  { name: 'Backend Development', level: 90 },
-                  { name: 'Machine Learning', level: 88 },
-                  { name: 'Cloud Architecture', level: 85 },
+                  { name: 'Frontend Development', level: 95, color: 'neon-cyan' },
+                  { name: 'Backend Development', level: 90, color: 'neon-green' },
+                  { name: 'Machine Learning', level: 88, color: 'neon-purple' },
+                  { name: 'Cloud Architecture', level: 85, color: 'neon-cyan' },
                 ].map((item, index) => (
                   <div key={index}>
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-slate-300">{item.name}</span>
-                      <span className="text-neon-green">[{item.level}%]</span>
+                      <span className={`text-${item.color}`}>[{item.level}%]</span>
                     </div>
-                    <div className="w-full bg-cyberpunk-darker/50 rounded-none h-2 overflow-hidden border border-neon-accent/20">
+                    <div className="w-full bg-cyberpunk-darker/50 rounded-none h-2 overflow-hidden border border-neon-cyan/20">
                       <div
-                        className="bg-gradient-to-r from-neon-green to-neon-accent h-full rounded-none transition-all duration-700"
+                        className={`bg-${item.color} h-full rounded-none transition-all duration-700`}
                         style={{ width: `${item.level}%` }}
                       />
                     </div>
@@ -120,19 +130,19 @@ const Skills = () => {
                 </div>
                 <div className="pl-6 grid grid-cols-2 gap-3 font-mono text-xs">
                   {[
-                    'Problem Solving',
-                    'Team Leadership',
-                    'Communication',
-                    'Project Management',
-                    'Mentoring',
-                    'Agile/Scrum',
+                    { name: 'Problem Solving', color: 'text-neon-cyan border-neon-cyan/40 hover:border-neon-cyan/70' },
+                    { name: 'Team Leadership', color: 'text-neon-green border-neon-green/40 hover:border-neon-green/70' },
+                    { name: 'Communication', color: 'text-neon-purple border-neon-purple/40 hover:border-neon-purple/70' },
+                    { name: 'Project Management', color: 'text-neon-cyan border-neon-cyan/40 hover:border-neon-cyan/70' },
+                    { name: 'Mentoring', color: 'text-neon-green border-neon-green/40 hover:border-neon-green/70' },
+                    { name: 'Agile/Scrum', color: 'text-neon-purple border-neon-purple/40 hover:border-neon-purple/70' },
                   ].map((skill, index) => (
                     <div
                       key={index}
-                      className="flex items-center py-2 text-neon-accent border border-neon-accent/40 px-3 hover:border-neon-green/60 hover:text-neon-green transition-all"
+                      className={`flex items-center py-2 border ${skill.color} px-3 transition-all`}
                     >
-                      <span className="text-neon-green mr-2">▸</span>
-                      <span className="text-xs">{skill}</span>
+                      <span className={`mr-2`}>▸</span>
+                      <span className="text-xs">{skill.name}</span>
                     </div>
                   ))}
                 </div>

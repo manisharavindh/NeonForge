@@ -52,7 +52,7 @@ const Navbar = () => {
             onClick={() => handleScroll('home')}
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <span className="text-lg font-bold text-neon-green">
+            <span className="text-lg font-bold text-neon-cyan">
               <span className="terminal-bracket">$</span> neonforge
             </span>
           </div>
@@ -63,7 +63,7 @@ const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
-                className="text-neon-accent hover:text-neon-green text-xs font-mono transition-colors duration-300 relative group border border-neon-accent/20 px-3 py-1 hover:border-neon-green/50"
+                className="text-neon-cyan hover:text-neon-green text-xs font-mono transition-all duration-300 relative group border border-neon-cyan/30 px-3 py-1 hover:border-neon-green/60"
               >
                 &gt; {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300" />
@@ -73,10 +73,10 @@ const Navbar = () => {
             {/* Terminal Button */}
             <button
               onClick={() => useTerminalStore.openTerminal()}
-              className="text-neon-accent hover:text-neon-green text-xs font-mono transition-colors duration-300 relative group border border-neon-accent/20 px-3 py-1 hover:border-neon-green/50"
+              className="text-neon-purple hover:text-neon-pink text-xs font-mono transition-all duration-300 relative group border border-neon-purple/30 px-3 py-1 hover:border-neon-pink/60"
             >
               &gt; terminal
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-pink group-hover:w-full transition-all duration-300" />
             </button>
           </div>
 

@@ -51,41 +51,50 @@ const Experience = () => {
         />
 
         <div className="space-y-8">
-          {experiences.map((exp, index) => (
+          {experiences.map((exp, index) => {
+            const colorClasses = {
+              cyan: 'text-neon-cyan',
+              green: 'text-neon-green',
+              purple: 'text-neon-purple'
+            };
+            const colors = ['cyan', 'green', 'purple'];
+            const color = colors[index % colors.length];
+            
+            return (
             <div key={index} className="terminal-window terminal-scanlines group">
-              {/* <div className="terminal-header">
-                <span className="ml-3 text-xs text-neon-accent font-mono">{exp.cmd}</span>
-              </div> */}
-
               <div className="terminal-body space-y-3">
                 <div>
                   <span className="terminal-prompt">➜</span>
                   <span className="text-slate-400 ml-1">~</span>
-                  <span className="terminal-bracket"> $</span>
-                  <span className="terminal-command"> cat {exp.cmd}</span>
+                  <span className={`terminal-bracket ${colorClasses[color]}`}> $</span>
+                  <span className={`terminal-command ${colorClasses[color]}`}> cat {exp.cmd}</span>
                 </div>
 
                 <div className="pl-6 space-y-2">
-                  <h3 className="text-sm font-bold text-neon-green group-hover:text-neon-green transition-colors">
+                  <h3 className={`text-sm font-bold ${colorClasses[color]} group-hover:text-neon-green transition-colors`}>
                     {exp.role}
                   </h3>
                   <div className="text-xs space-y-1">
-                    <p className="text-neon-accent">{exp.company}</p>
+                    <p className="text-neon-cyan">{exp.company}</p>
                     <p className="text-slate-400">[{exp.duration}]</p>
                     <p className="text-slate-300 leading-relaxed mt-2">{exp.description}</p>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 mt-3 pt-2 border-t border-neon-accent/20">
-                    {exp.highlights.map((highlight, idx) => (
-                      <Badge key={idx} variant="green">
-                        {highlight}
-                      </Badge>
-                    ))}
+                  <div className="flex flex-wrap gap-2 mt-3 pt-2 border-t border-neon-cyan/20">
+                    {exp.highlights.map((highlight, idx) => {
+                      const highlightColors = ['cyan', 'green', 'purple'];
+                      return (
+                        <Badge key={idx} variant={highlightColors[idx % highlightColors.length]}>
+                          {highlight}
+                        </Badge>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

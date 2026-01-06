@@ -336,16 +336,16 @@ const Terminal = ({ isFullScreen = false, onClose }) => {
 
       {/* Full-screen Terminal - Desktop Only */}
       <div
-        className="fixed inset-0 z-50 flex flex-col bg-cyberpunk-darker border border-neon-green/50 overflow-hidden hidden md:flex"
+        className="fixed inset-0 z-50 flex flex-col bg-cyberpunk-darker border border-neon-cyan/50 overflow-hidden hidden md:flex"
         style={{
-          backgroundColor: '#050d05',
+          backgroundColor: '#050812',
         }}
       >
         {/* Terminal Header - macOS-style */}
-        <div className="bg-cyberpunk-dark border-b border-neon-green/30 px-8 py-4 flex items-center justify-between flex-shrink-0">
+        <div className="bg-cyberpunk-dark border-b border-neon-cyan/30 px-8 py-4 flex items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-4">
             {/* <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-neon-muted" />
+              <div className="w-3 h-3 rounded-full bg-neon-cyan" />
               <div className="w-3 h-3 rounded-full bg-neon-purple" />
               <div className="w-3 h-3 rounded-full bg-neon-green" />
             </div> */}
@@ -353,7 +353,7 @@ const Terminal = ({ isFullScreen = false, onClose }) => {
           </div>
           <button
             onClick={onClose}
-            className="text-neon-light hover:text-neon-green transition-colors text-sm font-bold"
+            className="text-neon-light hover:text-neon-cyan transition-colors text-sm font-bold"
           >
             [-close-]
           </button>
@@ -364,7 +364,7 @@ const Terminal = ({ isFullScreen = false, onClose }) => {
           className="flex-1 overflow-y-auto px-8 py-6 space-y-1 font-mono text-sm"
           style={{
             background: `
-              linear-gradient(to bottom, rgba(52, 211, 153, 0.05), transparent),
+              linear-gradient(to bottom, rgba(0, 240, 255, 0.03), transparent),
               repeating-linear-gradient(
                 0deg,
                 rgba(0, 0, 0, 0.15) 0px,
@@ -385,7 +385,7 @@ const Terminal = ({ isFullScreen = false, onClose }) => {
                 key={idx}
                 className={`${
                   line.type === 'input'
-                    ? 'text-neon-green font-bold bg-neon-green/5 px-2 py-1 rounded border-l-2 border-neon-green ml-0 pl-2'
+                    ? 'text-neon-cyan font-bold bg-neon-cyan/5 px-2 py-1 rounded border-l-2 border-neon-cyan ml-0 pl-2'
                     : line.type === 'error'
                     ? 'text-red-500'
                     : line.type === 'system'
@@ -401,10 +401,10 @@ const Terminal = ({ isFullScreen = false, onClose }) => {
         </div>
 
         {/* Input Area - Inline Terminal Style */}
-        <div className="border-t border-neon-green/30 bg-cyberpunk-dark/60 px-8 py-4 flex-shrink-0 backdrop-blur-sm">
+        <div className="border-t border-neon-cyan/30 bg-cyberpunk-dark/60 px-8 py-4 flex-shrink-0 backdrop-blur-sm">
           <div className="flex items-baseline gap-2 font-mono text-sm">
-            <span className="text-neon-green font-bold flex-shrink-0">➜</span>
-            {/* <span className="text-neon-green flex-shrink-0">~/portfolio</span> */}
+            <span className="text-neon-cyan font-bold flex-shrink-0">➜</span>
+            {/* <span className="text-neon-cyan flex-shrink-0">~/portfolio</span> */}
             <span className="text-neon-light flex-shrink-0">$</span>
             <input
               ref={inputRef}
@@ -412,7 +412,7 @@ const Terminal = ({ isFullScreen = false, onClose }) => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="flex-1 bg-transparent text-neon-light outline-none font-mono text-sm caret-neon-green border-none"
+              className="flex-1 bg-transparent text-neon-light outline-none font-mono text-sm caret-neon-cyan border-none"
               placeholder=""
               spellCheck="false"
               autoFocus
@@ -421,7 +421,7 @@ const Terminal = ({ isFullScreen = false, onClose }) => {
                 padding: 0,
               }}
             />
-            <span className="text-neon-green animate-pulse flex-shrink-0">▮</span>
+            <span className="text-neon-cyan animate-pulse flex-shrink-0">▮</span>
           </div>
         </div>
       </div>
