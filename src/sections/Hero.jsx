@@ -1,6 +1,5 @@
 /**
  * Hero Section
- * Terminal-style landing interface
  */
 
 import React from 'react'

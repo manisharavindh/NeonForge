@@ -1,6 +1,5 @@
 /**
  * Achievements Section
- * Terminal-style achievement display
  */
 
 import React from 'react'

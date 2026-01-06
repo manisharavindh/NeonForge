@@ -1,6 +1,5 @@
 /**
  * Projects Section
- * Modern project grid with professional cards
  */
 
 import React, { useState } from 'react'

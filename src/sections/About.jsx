@@ -1,6 +1,5 @@
 /**
  * About Section
- * Professional bio with modern card layout
  */
 
 import React from 'react'

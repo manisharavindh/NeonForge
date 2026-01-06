@@ -1,6 +1,5 @@
 /**
  * Contact Section
- * Terminal-style contact form
  */
 
 import React, { useState } from 'react'

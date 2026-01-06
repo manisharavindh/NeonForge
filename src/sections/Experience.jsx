@@ -1,6 +1,5 @@
 /**
  * Experience Section
- * Professional timeline with modern cards
  */
 
 import React from 'react'

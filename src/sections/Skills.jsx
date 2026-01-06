@@ -1,6 +1,5 @@
 /**
  * Skills Section
- * Terminal-style skills display
  */
 
 import React from 'react'
